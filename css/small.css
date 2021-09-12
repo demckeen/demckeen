@@ -1,0 +1,57 @@
+/* Fonts from Google Fonts - more at https://fonts.google.com */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand:wght@600&display=swap');
+
+.content {max-width: 1200px;
+          margin: auto;
+          background-color: white;}
+
+.background {background-color: #83C5BE;}
+
+header {
+    background-color: #525174;
+    text-align: center;
+    color: white;
+}
+
+header h1 {
+    font-size: 2.5em;
+    padding-top: 15px;
+}
+
+header img {
+    margin-bottom: 25px;
+}
+
+body {
+  background-color: white;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  padding: 0;
+  font-size: 18px;
+  color: #444;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+.linktree {
+    padding: 25px;
+}
+
+footer {
+    background-color: #525174;
+    color: white;
+    height: auto;
+    text-align: center;
+    padding: 25px;
+    font-size: 16px;
+}
+
+footer a {
+    color: white;
+}
+
+.updated {
+    font-size: 12px;
+    color: #efd9ce;
+}
