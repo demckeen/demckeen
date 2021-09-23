@@ -3,7 +3,13 @@ const links = [
      url: "week1/index.html"},
     
     {label: "Week 1: localStorage Example",
-    url: "week1/localstorage.html"}
+    url: "week1/localstorage.html"},
+
+    {label: "Week 2: Notes",
+    url: "week2/index.html"},
+
+    {label: "Quiz Ninja",
+    url: "week2/quizninja.html"},
 ]
 
 for(var i=0; i<links.length; i++){
