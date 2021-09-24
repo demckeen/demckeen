@@ -2,6 +2,7 @@
 body{
     background: #5F1C1C;
     font-family: 'Roboto', sans-serif;
+    padding-top: 15px;
 }
 .dojo{
     background:  url(https://cdn.rawgit.com/alexmwalker/6acbe9040d9fe6e5e9fd758a25e1b2a5/raw/9c8131eb2ccc1e3839a5a5114cb16b5dc74daf04/dojo.svg) no-repeat;
@@ -52,3 +53,18 @@ button {
     color: #fff;
     background-color: #c00;
 }
+
+.returnLink {
+    display: block;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    max-width: 10.5rem;
+    padding: 3px;
+    border-radius: 3px;
+    font-size: .8rem;
+    background-color: #fff;
+    background-color: rgba(255,255,255,0.5);
+    text-align:center;
+}
+

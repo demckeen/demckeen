@@ -8,7 +8,7 @@ const links = [
     {label: "Week 2: Notes",
     url: "week2/index.html"},
 
-    {label: "Quiz Ninja",
+    {label: "Week 2: Quiz Ninja Exercise",
     url: "week2/quizninja.html"},
 ]
 
