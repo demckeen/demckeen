@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+  <title>Week One Notes</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Dana McKeen">
+  <meta name="description" content="This page contains my notes for Week One of Course reading 
+    BYUI WD330.">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+  <title>Week One Notes</title>
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/notes.css">
+</head>
+
+<body>
+    <header>
+        <div class="headerText"></div>
+        <h1>Dana McKeen</h1>
+        <h2>WDD 330: Portfolio Site</h2>
+        <a href="../index.html">Return to main portfolio site</a>
+        </div>
+    </header>
+    <main>
+     <div class="text">
+        <div class="heading"><h1>Week Three Notes</h1></div>
+        <div class="textGrid">
+          <div class="questions">
+            <h2>Questions</h2>
+            <ul class="qList">
+              <li>What is an alternative to "clone" for creating an actual
+                duplicate array vs one that merely references the same memory?
+              </li>
+            </ul>
+          </div>
+          <div class="notes">
+            <h2>Thoughts</h2>
+            <p>
+              The .hasOwnProperty() tool seems like it is potentially very useful. I 
+              will have to see if there is some circumstance where it makes sense
+              for me to use this in the future. I really like the examples of using
+              objects as parameters for functions. It is very cool to be able to establish
+              default parameters that can be overwritten while also even maintaining a parameter 
+              that still must be defined. I also really liked seeing the explanation of 
+              placing things within an object literal purely for use of the object as a 
+              namespace. This is clearly something we see in major use in the <a href="
+              quizninja.html">QuizNinja Exercise</a>.
+            </p>
+          </div>
+        </div>
+          <div class="moreThoughts">
+            <p>Playing around with event listeners is always a bit of fun as well. While 
+              there are some things I definitely still don't have immediate encyclopedic grasp 
+              of in terms of when I would write an implement a new scenario, running through
+              several modifications was helpful in terms of concepts and knowing 
+              what some of the possibilities are. I thought it was great to get the information
+              about how touch interactions exist in this landscape. 
+            </p>
+            <p>This bit of information I definitely want to hang on to:</p>
+            <p class="quote">“There are no 'swipe' events. These need to be created by using a combination of touchstart , touchmove , and touchleave events that monitor the distance and direction moved from start to finish of a touch event.
+              If you need to implement gestures, it's probably a good idea to use a library such asHammer.JSorzingtouchthat makes events such as swipe, pinch and rotate easy to implement.”</p>
+
+            <div class="eventExamples">
+              <div id='click'>Click On Me</div>
+              <div id='dblclick'>Double Click On Me</div>
+              <div id='mouse'>Hover On Me</div>
+            </div>
+            <div class="caption">Examples of Event Listeners</div>
+          </div>
+        </div>  
+    </main>
+    <script src="js/notes.js"></script>
+</body>
+</html>

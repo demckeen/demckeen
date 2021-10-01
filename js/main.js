@@ -10,6 +10,9 @@ const links = [
 
     {label: "Week 2: Quiz Ninja Exercise",
     url: "week2/quizninja.html"},
+
+    {label: "Week 3: Notes",
+    url: "week3/index.html"},
 ]
 
 for(var i=0; i<links.length; i++){
