@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+  <title>Week One Notes</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Dana McKeen">
+  <meta name="description" content="This page contains my notes for Week One of Course reading 
+    BYUI WD330.">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+  <title>Week Three Notes</title>
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/notes.css">
+  <link rel="stylesheet" href="css/tictactoe.css">
+</head>
+
+<body>
+    <header>
+        <div class="headerText"></div>
+        <h1>Dana McKeen</h1>
+        <h2>WDD 330: Portfolio Site</h2>
+        <a href="../index.html">Return to main portfolio site</a>
+        </div>
+    </header>
+    <main>
+     <div class="text">
+        <div class="heading"><h1>Week Three Notes</h1></div>
+        <!-- <div class="textGrid"> -->
+          <!-- <div class="questions">
+            <h2>Questions</h2>
+            <ul class="qList">
+              <li>What is an alternative to "clone" for creating an actual
+                duplicate array vs one that merely references the same memory?
+              </li>
+            </ul>
+          </div> -->
+          <div class="moreThoughts">
+            <h2>Thoughts</h2>
+            <p>
+                I really like reading about objects and classes this way. I was feeling a bit of deja vu until I 
+                realized I was reading this same type of content last week regarding PHP in my Web Backend Class. 
+                Functionally they seem to be very similar - or rather conceptually I should say. I can tell that 
+                this is yet another subject that I will need a lot of practice for it to sink in and become 
+                something I can accomplish without continually referencing instructional material. I had fun 
+                updating the Quiz Ninja to full fledged “got a ton of JSON” reality. I had to keep debugging, 
+                though, because we weren’t asked to read every chapter so I started to add new Quiz Ninja stuff 
+                that relied on things in previous chapters and then went back and tried to figure things out week 
+                to week which was confusing. Still - I got it working and got to practice my debugging stills, 
+                which was great.</a>.
+            </p>
+            <p>It was also fun working to solve the tic tac toe activity with my group. We have some fantastic 
+                group members that really helped refine some of the clunky suggestions made by myself and those 
+                of us who are less experienced with javascript. I wanted to find my own solutions to finishing the 
+                game logic, though, so since we were already done with the main goals at one hour, we agreed to 
+                move forward and continue to share any stretch goal solutions we came up with. I was so happy to have 
+                something I could share back in return.</p>
+          </div>
+        <!-- </div> -->
+            <div class="tictactoe">
+                <div class="caption">Try out my solution below!</div>
+                <div class="container">
+                    <div class="board" id="board">
+                        <div class="block" id="block0" dataIndex="0"></div>
+                        <div class="block" id="block1" dataIndex="1"></div>
+                        <div class="block" id="block2" dataIndex="2"></div>
+                        <div class="block" id="block3" dataIndex="3"></div>
+                        <div class="block" id="block4" dataIndex="4"></div>
+                        <div class="block" id="block5" dataIndex="5"></div>
+                        <div class="block" id="block6" dataIndex="6"></div>
+                        <div class="block" id="block7" dataIndex="7"></div>
+                        <div class="block" id="block8" dataIndex="8"></div>
+                    </div>
+                </div>
+                <div class="info">
+                    <button onclick='resetBoard()'>Reset Game</button>
+                    <h2 id="winner"></h2>
+                </div>
+                <script src="js/emain.js">
+                </script>
+            </div>
+          </div>
+        </div>  
+    </main>
+    <script src="js/notes.js"></script>
+</body>
+</html>

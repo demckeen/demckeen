@@ -11,8 +11,11 @@ const links = [
     {label: "Week 2: Quiz Ninja Exercise",
     url: "week2/quizninja.html"},
 
-    {label: "Week 3: Notes",
+    {label: "Week 3: Notes & Exercises",
     url: "week3/index.html"},
+
+    {label: "Week 4: Notes & Exercises",
+    url: "week4/index.html"},
 ]
 
 for(var i=0; i<links.length; i++){
