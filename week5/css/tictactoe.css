@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.moreThoughts h2, .moreThoughts {padding-bottom: .5rem;}
+.moreThoughts h2 {padding-bottom: 1.5rem;
+    font-weight: 300;}
+.moreThoughts p {padding-bottom: 1rem;}
+.caption {padding-bottom: 10px;}
+
+.container {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eee;
+}
+
+.info {
+    min-height: 20vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    background: #eee;
+    gap: 1rem;
+}
+
+button {
+    outline: none;
+    border-radius: 5px;
+    border: 4px solid #525174;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    background: #525174;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.board {
+    display: grid;
+    width: 300px;
+    height: 300px;
+    grid-template-columns: auto auto auto;
+}
+
+.block {
+    display: flex;
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: bold;
+    border: 3px solid black;
+    transition: background 0.2s ease-in-out;
+}
+
+.block:hover {
+    cursor: pointer; 
+    background: #0ff30f;
+}
+
+.occupied:hover {
+    background: #ff3a3a;
+}
+
+/*delete lines */
+#block0, #block1, #block2 {
+    border-top: none;
+}
+
+#block0, #block3, #block6 {
+    border-left: none;
+}
+
+#block6, #block7, #block8 {
+    border-bottom: none;
+}
+
+#block2, #block5, #block8 {
+    border-right: none;
+}
