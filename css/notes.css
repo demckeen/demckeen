@@ -1,5 +1,6 @@
 /* Fonts from Google Fonts - more at https://fonts.google.com */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
 
 html {
     height: 100%;
@@ -75,6 +76,16 @@ body {
 ul {list-style-type: circle;}
 
 .questions h2, .notes h2 {font-weight: 300;}
+
+.codesample {
+    background-color: rgb(219, 219, 219);
+    font-family: 'Courier Prime', monospace;
+    color:black;
+    font-size: .8em;
+    padding: 15px;
+}
+
+.code {margin-bottom: 10px;}
 
 .caption {font-style: italic;
     font-size: .8rem;

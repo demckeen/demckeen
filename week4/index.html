@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>Week One Notes</title>
+  <title>Week Four Notes</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Dana McKeen">
@@ -27,37 +27,57 @@
     <main>
      <div class="text">
         <div class="heading"><h1>Week Four Notes</h1></div>
-        <!-- <div class="textGrid"> -->
-          <!-- <div class="questions">
-            <h2>Questions</h2>
-            <ul class="qList">
-              <li>What is an alternative to "clone" for creating an actual
-                duplicate array vs one that merely references the same memory?
-              </li>
-            </ul>
-          </div> -->
           <div class="moreThoughts">
             <h2>Thoughts</h2>
             <p>
-                I really like reading about objects and classes this way. I was feeling a bit of deja vu until I 
-                realized I was reading this same type of content last week regarding PHP in my Web Backend Class. 
-                Functionally they seem to be very similar - or rather conceptually I should say. I can tell that 
-                this is yet another subject that I will need a lot of practice for it to sink in and become 
-                something I can accomplish without continually referencing instructional material. I had fun 
-                updating the Quiz Ninja to full fledged “got a ton of JSON” reality. I had to keep debugging, 
-                though, because we weren’t asked to read every chapter so I started to add new Quiz Ninja stuff 
-                that relied on things in previous chapters and then went back and tried to figure things out week 
-                to week which was confusing. Still - I got it working and got to practice my debugging stills, 
-                which was great.</a>.
+            A concept I thought would be potentially really useful to me in the future was the section about using
+            a controller to watch a form to append a list. I can see how this pattern could be used for many
+            things, outside of lists even. Of course, this is an example of MVC - which I like as a subject in this 
+            chapter that seems to be in some cases about working outside of simple js and incorporating libraries 
+            and frameworks. While this MVC pattern is often used in those contexts, it's also something that can be
+            applied directly.
             </p>
-            <p>It was also fun working to solve the tic tac toe activity with my group. We have some fantastic 
-                group members that really helped refine some of the clunky suggestions made by myself and those 
-                of us who are less experienced with javascript. I wanted to find my own solutions to finishing the 
-                game logic, though, so since we were already done with the main goals at one hour, we agreed to 
-                move forward and continue to share any stretch goal solutions we came up with. I was so happy to have 
-                something I could share back in return.</p>
+            <div class="code">
+            <p class="codesample">'use strict'
+
+              const form = document.forms[0];
+              
+              class Item {
+                  constructor(name) {
+                      this.name = name;
+                  }
+              }</p>
+            <p class="codesample">const controller = {
+              watch(form) {
+                  form.addEventListener('submit', (event) => {
+                  event.preventDefault(); // prevent the form from being submitted
+                  this.add(form.name.value);
+                  }, false);
+              },
+          
+              add(name) {
+                  const item = new Item(name);
+                  view.render(item);
+              }
+          };</p>
+          <p class="codesample">const view = {
+            render(item) {
+                const list = document.getElementById('list');
+                const li = document.createElement('li');
+                li.innerHTML = item.name;
+                list.appendChild(li);
+                // reset the input field
+                form.name.value = '';
+            }
+        };</p>
+          <p class="codesample">controller.watch(form);</p>
+        </div>
+            <p>This is going a bit backwards in the reading, but I also thought that learning about the Modules in ES6 
+              would be really useful and relevant. Using an "export" in the module, various things can be imported into 
+              a main js file, which allows you to store a lot of information in a more organized way and also in ways that
+              encourage re-use of code. 
+            </p>
           </div>
-        <!-- </div> -->
             <div class="tictactoe">
                 <div class="caption">Try out my solution below!</div>
                 <div class="container">
