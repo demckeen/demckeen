@@ -6,6 +6,8 @@
 }
 
 .moreThoughts h2, .moreThoughts {padding-bottom: .5rem;}
+.moreThoughts h2 {padding-bottom: 1.5rem;
+    font-weight: 300;}
 .moreThoughts p {padding-bottom: 1rem;}
 .caption {padding-bottom: 10px;}
 
