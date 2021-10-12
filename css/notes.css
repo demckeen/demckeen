@@ -23,14 +23,14 @@ header {
 }
 
 h1 {
-    font-size: 2.2em;
+    font-size: calc(36px + 6 * ((100vw - 320px) / 680));
     padding-top: 15px;
     font-weight: 100;
     margin: 0;
 }
 
 header h2 {
-    font-size: 1.8em;
+    font-size: calc(28px + 6 * ((100vw - 320px) / 680));
     font-weight: 200;
     margin: 0;
 }
@@ -68,6 +68,11 @@ body {
 
 .moreThoughts {padding-bottom: 2em;}
 
+.moreThoughts ul {list-style-type: circle;
+    font-size: 1.1rem;}
+
+.moreThoughts ul li {padding: 5px;}
+
 .questions {background-color: #e8e7fc;}
 
 .questions h2 {padding-top: 1em;
@@ -78,14 +83,19 @@ ul {list-style-type: circle;}
 .questions h2, .notes h2 {font-weight: 300;}
 
 .codesample {
-    background-color: rgb(219, 219, 219);
+    background-color: rgb(235, 235, 235);
     font-family: 'Courier Prime', monospace;
     color:black;
     font-size: .8em;
     padding: 15px;
 }
 
-.code {margin-bottom: 10px;}
+.comment {font-family: 'Poppins', sans-serif;
+    font-size: .9rem;
+    color: #444363;}
+
+.code {margin-bottom: 10px;
+    background-color:rgb(235, 235, 235);}
 
 .caption {font-style: italic;
     font-size: .8rem;

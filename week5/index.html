@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
   <title>Week Five Notes</title>
   <meta charset="utf-8">
@@ -13,94 +14,94 @@
   <link rel="shortcut icon" href="/images/favicon.ico">
   <link rel="stylesheet" href="../css/normalize.css">
   <link rel="stylesheet" href="../css/notes.css">
-  <link rel="stylesheet" href="css/tictactoe.css">
+  <link rel="stylesheet" href="css/split.css">
 </head>
 
 <body>
-    <header>
-        <div class="headerText"></div>
-        <h1>Dana McKeen</h1>
-        <h2>WDD 330: Portfolio Site</h2>
-        <a href="../index.html">Return to main portfolio site</a>
-        </div>
-    </header>
-    <main>
-     <div class="text">
-        <div class="heading"><h1>Week Four Notes</h1></div>
-          <div class="moreThoughts">
-            <h2>Thoughts</h2>
-            <p>
-            A concept I thought would be potentially really useful to me in the future was the section about using
-            a controller to watch a form to append a list. I can see how this pattern could be used for many
-            things, outside of lists even. Of course, this is an example of MVC - which I like as a subject in this 
-            chapter that seems to be in some cases about working outside of simple js and incorporating libraries 
-            and frameworks. While this MVC pattern is often used in those contexts, it's also something that can be
-            applied directly.
-            </p>
-            <div class="code">
-            <p class="codesample">'use strict'
-
-              const form = document.forms[0];
-              
-              class Item {
-                  constructor(name) {
-                      this.name = name;
-                  }
-              }</p>
-            <p class="codesample">const controller = {
-              watch(form) {
-                  form.addEventListener('submit', (event) => {
-                  event.preventDefault(); // prevent the form from being submitted
-                  this.add(form.name.value);
-                  }, false);
-              },
-          
-              add(name) {
-                  const item = new Item(name);
-                  view.render(item);
-              }
-          };</p>
-          <p class="codesample">const view = {
-            render(item) {
-                const list = document.getElementById('list');
-                const li = document.createElement('li');
-                li.innerHTML = item.name;
-                list.appendChild(li);
-                // reset the input field
-                form.name.value = '';
-            }
-        };</p>
-          <p class="codesample">controller.watch(form);</p>
-        </div>
-            <p>This is going a bit backwards in the reading, but I also thought that learning about the Modules in ES6 
-              would be really useful and relevant. Using an "export" in the module, various things can be imported into 
-              a main js file, which allows you to store a lot of information in a more organized way and also in ways that
-              encourage re-use of code. 
-            </p>
-          </div>
-            <div class="tictactoe">
-                <div class="caption">Try out my solution below!</div>
-                <div class="container">
-                    <div class="board" id="board">
-                        <div class="block" id="block0" dataIndex="0"></div>
-                        <div class="block" id="block1" dataIndex="1"></div>
-                        <div class="block" id="block2" dataIndex="2"></div>
-                        <div class="block" id="block3" dataIndex="3"></div>
-                        <div class="block" id="block4" dataIndex="4"></div>
-                        <div class="block" id="block5" dataIndex="5"></div>
-                        <div class="block" id="block6" dataIndex="6"></div>
-                        <div class="block" id="block7" dataIndex="7"></div>
-                        <div class="block" id="block8" dataIndex="8"></div>
-                    </div>
-                </div>
-                <div class="info">
-                    <button onclick='resetBoard()'>Reset Game</button>
-                    <h2 id="winner"></h2>
-                </div>
+  <header>
+    <div class="headerText"></div>
+    <h1>Dana McKeen</h1>
+    <h2>WDD 330: Portfolio Site</h2>
+    <a href="../index.html">Return to main portfolio site</a>
+    </div>
+  </header>
+  <main>
+    <div class="text">
+      <div class="heading">
+        <h1>Week Five Notes</h1>
+      </div>
+      <div class="split">
+        <h2>Retry Example from Eloquent Javascript Ch. 8</h2>
+        <div class="example">
+          <div class="left">
+            <div class="intro">Enter two integers to be used in a multiplication function.</div>
+            <div>
+              <p>A:</p>
+              <input type="number" name="a" id="a"><br>
+              <p>B:</p>
+              <input type="number" name="b" id="b"><br>
+            </div>
+            <div class="btnBlock">
+              <button type="button" id="multiply">Multiply</button>
             </div>
           </div>
-        </div>  
-    </main>
-    <script src="js/emain.js"></script>
+          <div class="right">
+            <h2>Console Log Output</h2>
+            <div id="log"></div>
+            <div class="btnBlock">
+              <button type="button" id="reset">Reset</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="moreThoughts">
+        <h2>Thoughts</h2>
+        <p>
+          Working through the retry exercise above definitely helped me understand try-catch-finally very well -
+        </p>
+      </div>
+      <div class="code">
+        <p class="codesample">function reliableMultiply(a,b) {</p>
+        <p class="comment">This is a function to test another function</p>
+        <p class="codesample">
+          a = parseInt(document. getElementById("a").value);<br>
+          b = parseInt(document. getElementById("b").value);<br><br>
+          for (;;)</p>
+        <p class="comment">This establishes a testing loop which will only complete when the try stage is successful</p>
+        <p class="codesample">&nbsp;&nbsp;{'use strict';<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;try {<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;primitiveMultiply(a, b);</p>
+        <p class="comment">This is the function I'm testing - if an error is thrown it moves to the catch stage from
+          this point</p>
+        <p class="codesample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log (primitiveMultiply(a,b));</p>
+        <p class="comment">This will only log when there is a successful result
+          because otherwise it will move straight from the prior code line to the catch stage.
+        </p>
+        <p class="codesample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;}</p>
+        <p class="codesample">&nbsp;&nbsp;&nbsp;&nbsp;catch (error) {<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Failed attempt.");}</p>
+        <p class="comment">This logs with each error attempt</p>
+        <p class="comment">If I had a "finally" stage, it would appear here. This could would run in each
+          loop of the testing loop phase, so it would be useful for any cleanup - something that is needed to
+          reset for ideal testing circumstances. It runs regardless of any success or errors.
+        </p>
+        <p class="codesample">}}</p>
+      </div>
+      <div class="moreThoughts">
+        Some other little tidbits I wanted to note to remember:
+        <ul>
+          <li>Use an if statement to determine if a feature is supported before invoking it to avoid exceptions.</li>
+          <li>Use alert() as an old school breakpoint</li>
+          <li>“The console.trace() method will log an interactive stack trace in the console. This will show the functions that were called in the lead up to an exception occurring while the code is running.”</li>
+          <li><a href="https://www.sitepoint.com/three-little-known-development-console-api-methods/" target="_return">Link</a> that reviews other console methods </li>
+          <li>Error objects - allow you to create methods that will pass certain error messages</li>
+          <li>Test Driven Development = proactively including testing in your process as opposed to only looking for issues after expecting everything to work.</li>
+        </ul>
+      </div>
+      <div class="border"></div>
+    </div>
+  </main>
+  <script src="js/emain.js"></script>
 </body>
+
 </html>
