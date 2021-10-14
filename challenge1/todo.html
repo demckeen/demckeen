@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Dana McKeen">
+    <meta name="description" content="Simple ToDo List App">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="css/small.css" media="screen">
+    <link rel="stylesheet" href="css/medium.css" media="screen">
+</head>
+
+<body>
+    <main>
+        <div class="listContainer">
+            <h1>To Do List</h1>
+            <div class="listItems">
+
+            </div>
+            <div class="filters">
+                <div class="taskRemain"><span id="counter">0</span> tasks remaining</div>
+                <div class="categories">
+                    <div class="all" id="shown">All.</div>
+                    <div class="active">Active.</div>
+                    <div class="complete">Completed.</div>
+                </div>
+            </div>
+            <div class="addTask">
+                <div class="entryArea"></div>
+                <label for="newTask">New Task:</label>
+                <input type="text" name="newTask" id="newTask">
+                <button type="submit" id="addNewTask">+</button>
+            </div>
+        </div>
+        </div>
+    </main>
+    <script src="js/main.js" type="module"></script>
+</body>
+
+</html>
