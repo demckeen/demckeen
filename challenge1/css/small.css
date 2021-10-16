@@ -66,7 +66,8 @@ button {background-color: #fff4fd;
     border-radius: 3px;
     height: 26px;
     width: 26px;
-    padding: 0;}
+    padding: 0;
+    cursor: pointer;}
 
 input {height: 24px;
     border:none;

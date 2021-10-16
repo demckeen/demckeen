@@ -71,7 +71,7 @@ div.moreThoughts {padding-bottom: 0;}
 }
 
 div.intro{
-font-size: calc(17px + 6 * ((100vw - 320px) / 680));;
+font-size: calc(17px + 5 * ((100vw - 320px) / 680));;
 font-weight: 300;}
 
 .left input {
