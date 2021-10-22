@@ -6,9 +6,9 @@ export {readFromLS, writeToLS, toDoList, removeTask, updateTask};
 
 let toDoList = [];
 
-function readFromLS(toDoList) {
-    toDoList = JSON.parse(window.localStorage.getItem(toDoList))
-    return toDoList;
+function readFromLS() {
+    toDoList = JSON.parse(localStorage.getItem('toDoList'));
+    return toDoList
  }
 
 // write an array of objects to local storage under the provided key @param {string} key The key 

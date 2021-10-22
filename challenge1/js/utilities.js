@@ -1,4 +1,13 @@
-export {qs, onTouch, renderTodoList, renderCompletedList, renderActiveList};
+import { readFromLS, toDoList } from "./ls.js";
+
+export {
+    qs,
+    onTouch,
+    renderTodoList,
+    renderCompletedList,
+    renderActiveList,
+    getTodos,
+};
 
 // do a querySelector lookup @param {string} selector The selector passed to querySelector
 // @return {element} The matching element or null if not found /
@@ -15,11 +24,11 @@ function qs(selector) {
 function onTouch(elementSelector, callback) {
 
     let element = document.getElementById(elementSelector);
-    element.addEventListener('touchend',callback);
+    element.addEventListener('touchend', callback);
 
     if ('click' in window) {
-        element.addEventListener("click", function() {
-            let click = function() {
+        element.addEventListener("click", function () {
+            let click = function () {
                 //call the callback function
                 callback();
                 //remove the click handler after perform
@@ -43,72 +52,86 @@ function renderTodoList(list, element) {
         let item = document.createElement("li");
         let checkbox = document.createElement("span");
         let remove = document.createElement("span");
+        let task = document.createElement("span");
         let text = list[i].content;
         let id = list[i].id;
 
         checkbox.classList.add("checkbox");
         remove.classList.add("delete");
+        task.classList.add("description");
         item.classList.add("task");
         item.setAttribute('id', id);
 
         if (list[i].completed === true) {
-        checkbox.classList.add("complete");
-        item.classList.add("completeli");
+            checkbox.classList.add("complete");
+            item.classList.add("completeli");
         }
 
-        item.textContent = text;
+        task.textContent = text;
         item.appendChild(checkbox);
+        item.appendChild(task);
         item.appendChild(remove);
 
-        element.appendChild(item);   
-        
-    }}
+        element.appendChild(item);
 
-    function renderCompletedList(list, element) {
-        element.innerHTML = '';
-        for (let i = 0; i < list.length; i++) {
-            let item = document.createElement("li");
-            let checkbox = document.createElement("span");
-            let remove = document.createElement("span");
-            let text = list[i].content;
-            let id = list[i].id;
-    
-            checkbox.classList.add("checkbox");
-            checkbox.classList.add("complete");
-            remove.classList.add("delete");
-            item.classList.add("task");
-            item.classList.add("completeli");
-            item.setAttribute('id', id);
-    
-            item.textContent = text;
-            item.appendChild(checkbox);
-            item.appendChild(remove);
-    
-            element.appendChild(item);   
-            
-        }}
+    }
+}
 
-        function renderActiveList(list, element) {
-            element.innerHTML = '';
-            for (let i = 0; i < list.length; i++) {
-                let item = document.createElement("li");
-                let checkbox = document.createElement("span");
-                let remove = document.createElement("span");
-                let text = list[i].content;
-                let id = list[i].id;
-        
-                checkbox.classList.add("checkbox");
-                remove.classList.add("delete");
-                item.classList.add("task");
-                item.setAttribute('id', id);
-        
-                item.textContent = text;
-                item.appendChild(checkbox);
-                item.appendChild(remove);
-        
-                element.appendChild(item);   
-                
-            }}
+function renderCompletedList(list, element) {
+    element.innerHTML = '';
+    for (let i = 0; i < list.length; i++) {
+        let item = document.createElement("li");
+        let checkbox = document.createElement("span");
+        let remove = document.createElement("span");
+        let task = document.createElement("span");
+        let text = list[i].content;
+        let id = list[i].id;
 
+        checkbox.classList.add("checkbox");
+        checkbox.classList.add("complete");
+        remove.classList.add("delete");
+        task.classList.add("description");
+        item.classList.add("task");
+        item.classList.add("completeli");
+        item.setAttribute('id', id);
 
+        task.textContent = text;
+        item.appendChild(checkbox);
+        item.appendChild(task);
+        item.appendChild(remove);
 
+        element.appendChild(item);
+
+    }
+}
+
+function renderActiveList(list, element) {
+    element.innerHTML = '';
+    for (let i = 0; i < list.length; i++) {
+        let item = document.createElement("li");
+        let checkbox = document.createElement("span");
+        let remove = document.createElement("span");
+        let task = document.createElement("span");
+        let text = list[i].content;
+        let id = list[i].id;
+
+        checkbox.classList.add("checkbox");
+        remove.classList.add("delete");
+        task.classList.add("description");
+        item.classList.add("task");
+        item.setAttribute('id', id);
+
+        task.textContent = text;
+        item.appendChild(checkbox);
+        item.appendChild(task);
+        item.appendChild(remove);
+
+        element.appendChild(item);
+
+    }
+}
+
+function getTodos() {
+    readFromLS();
+    renderTodoList(toDoList, document.getElementById("tasks"));
+}

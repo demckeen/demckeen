@@ -1,9 +1,10 @@
 
 import ToDos from "./toDos.js";
+import { getTodos } from "./utilities.js";
 
 const toDos = new ToDos;
 
-toDos.getTodos();
+getTodos();
 
 let button = document.getElementById('addNewTask');
 
@@ -19,9 +20,12 @@ function addTask() {
     toDos.listTodos();
 }
 
+window.onload = function () {prepareEventHandlers();}
+
+function prepareEventHandlers() {
 toDos.completeToDo();
 toDos.removeToDo();
-toDos.filterToDo();
+toDos.filterToDo();}
 
 
 

@@ -1,1 +1,8 @@
-@media only screen and (min-width: 34rem) {}
+@media only screen and (min-width: 34rem) {
+
+    .task {padding: 5px 30px 5px 30px;}
+
+    .categories {flex-direction: row;
+        align-items: center;
+        justify-content: flex-end; }
+}

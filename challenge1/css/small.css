@@ -9,7 +9,8 @@
   box-sizing: inherit;
 }
 
-body {font-family: 'Poppins', sans-serif;}
+body {font-family: 'Poppins', sans-serif;
+    color: #4f5d75;}
 
 .listContainer {border: medium solid #CBC0D3;
     border-radius: 10px;
@@ -30,7 +31,10 @@ h1 {text-align: center;
     background-color: #DEE2FF;}
 
 .categories {display: flex;
-    flex-direction: row;
+    flex-basis: 50%;
+    justify-items: center;
+    text-align: left;
+    flex-direction: column;
     color: #4f5d75;
     font-weight: 300;}
 
@@ -52,12 +56,15 @@ h1 {text-align: center;
 #counter {font-weight: 600;}
 
 .taskRemain {font-weight: 300;
+    flex-basis: 50%;
+    color: #4f5d75;
     align-self: center;}
 
 .shown {background-color: white;
     border-radius: 5px;
-    font-weight: 600;
-    padding: 5px 10px 5px 10px;
+    font-weight: 600;}
+
+#active, #all, #completed {padding: 5px 10px 5px 10px;
     margin: 0;}
 
 button {background-color: #fff4fd;
@@ -74,6 +81,8 @@ button {background-color: #fff4fd;
 
 input {height: 24px;
     border:none;
+    min-width: 0;
+    max-width: 350px;
     font-size: 1rem;
     font-family: 'Poppins', sans-serif;}
 
@@ -83,43 +92,84 @@ label {
 .checkbox::before {
     font-family: "Font Awesome 5 Free"; 
     content: "\f0c8";
+    color: #4f5d75;
     display: inline-block;
+    font-size: 1.2rem;
+    text-align: center;
     font-style: normal;
     font-variant: normal;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
+    transition: all .1s;
+}
+
+.task span::before, .task span::after {margin-top: 0;
+    width: 44px;
+    cursor: pointer;}
+
+.delete:hover:before {
+    font-size: 1.3rem;
+    color:#83026b;
+    transition: all .5s;
+}
+
+.checkbox:hover:before {
+    font-size: 1.5rem;
+    color: #83026b;
+    transition: all .5s;
 }
 
 .complete::before {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     content: "\f14a";
+    color:#83026b;
     display: inline-block;
+    text-align: center;
     font-style: normal;
     font-variant: normal;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
+    transition: all .1s;
 }
 
 .delete::before {
     font-family: "Font Awesome 5 Free"; 
     font-weight: 900; 
     content: "\f00d";
+    color: #4f5d75;
     display: inline-block;
+    text-align: center;
     font-style: normal;
     font-variant: normal;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
+    transition: all .1s;
 }
 
 ul {list-style-type: none;
     padding: 5px 0px 5px 0px;
     margin: 0;}
 
-li.completeli {text-decoration: line-through;}
+li.completeli {text-decoration: line-through;
+    background-color:#fff4fd;
+    color: #83026b;
+    transition: all .5s; }
+
+li {transition: all .2s;
+    border-bottom: 2px solid #f9efff;}
+
+.completeli > .delete::before {
+    color:#83026b;
+    transition: all .5s;
+}
 
 .task {display: flex;
-    justify-content: space-between;
+    align-items: center;
+    min-height: 44px;
     padding: 5px 15px 5px 15px;}
+
+span.description {flex-grow: 1;
+    margin-left: 10px;}
 
 .checkbox {order: -1;}

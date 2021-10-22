@@ -11,6 +11,10 @@ export default class ToDos {
         this.id = id;
         this.content = content;
         this.completed = completed;
+
+        readFromLS();
+        countTasks();
+
     }
 
     //  Add a method to the Todos class called addTodo. It should grab the input in the html where users enter 
@@ -34,7 +38,8 @@ export default class ToDos {
         let list = JSON.parse(localStorage.getItem('toDoList'));
         let element = document.getElementById("tasks");
         if (list) {
-          renderTodoList(list, element);}
+          renderTodoList(list, element);
+          countTasks();}
     }
 
     listTodos() {
@@ -42,6 +47,7 @@ export default class ToDos {
         let element = document.getElementById("tasks");
         document.getElementById('newTask').value='';
         renderTodoList(list, element);
+        countTasks();
     }
 
     completeToDo() {
@@ -60,7 +66,9 @@ export default class ToDos {
         let taskId = e.target.parentNode.id;
         let status = false;
         updateTask(taskId, status);
-        }});
+        }
+        countTasks();
+    });
     }
 
      removeToDo() {
@@ -69,7 +77,9 @@ export default class ToDos {
         if (e.target.className === "delete"){
             let taskId = e.target.parentNode.id;
             removeTask(taskId);
-            }})
+            }
+            countTasks();
+        })
      }
 
     filterToDo() {
@@ -100,9 +110,7 @@ export default class ToDos {
             e.target.classList.add("shown");
             document.getElementById("active").classList.remove("shown");
             document.getElementById("completed").classList.remove("shown");    
-        }
-
-    })}}
+        }})}}
     
     function saveTodo(task, ToDos) {
 
@@ -115,3 +123,13 @@ export default class ToDos {
     
         writeToLS(task, toDoList);
     }}
+
+    function countTasks() {
+        let alltasks = toDoList.length;
+        let completed = document.getElementsByClassName("complete");
+        completed = completed.length;
+
+        let remaining = alltasks - completed;
+
+        document.getElementById("counter").innerHTML = remaining;
+    }
