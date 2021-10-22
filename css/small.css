@@ -47,11 +47,8 @@ body {
   padding-bottom: 6rem;
 }
 
-main {background-color: white;}
-
-.linktree {
-    padding: 25px;
-}
+main {background-color: white;
+    padding: 15px 25px 25px 25px;}
 
 li {padding-bottom: 10px;}
 

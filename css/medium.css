@@ -1,7 +1,16 @@
-@media only screen and (min-width: 32.5em) {    
+@media only screen and (min-width: 32.5em) {
     h2 {
         font-size: 2em;
     }
 
-main, .headerText {max-width: 1000px;
-    margin: auto;}}
+    main,
+    .headerText {
+        max-width: 1000px;
+        margin: auto;
+    }
+
+
+main {
+    padding: 25px 50px 50px 50px;
+}
+}
