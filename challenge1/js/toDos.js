@@ -33,7 +33,7 @@ export default class ToDos {
     getTodos() {
         let list = JSON.parse(localStorage.getItem('toDoList'));
         let element = document.getElementById("tasks");
-        if (list != "") {
+        if (list) {
           renderTodoList(list, element);}
     }
 
