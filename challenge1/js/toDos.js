@@ -1,91 +1,117 @@
-const toDoList = null;
-
-// build a todo object, add it to the todoList, and save the new list to local storage.
-// @param {string} key The key under which the value is stored under in LS @param {string} task The text of the 
-//task to be saved.
-
-function saveTodo(/*task, key*/) {
-    const task = {id:'', content: '', completed: ''}}
-
-// A todo should look like this: { id : timestamp, content: string, completed: bool }
-
-/* check the contents of todoList, a local variable containing a list of ToDos. If it is null then pull 
-the list of todos from localstorage, update the local variable, and return it @param {string} key The key 
-under which the value is stored under in LS @return {array} The value as an array of objects
-*/
-
-// function getTodos(key) {}
+import { readFromLS, writeToLS, toDoList, removeTask, updateTask} from "./ls.js";
+import {qs,renderTodoList,onTouch,renderActiveList,renderCompletedList} from "./utilities.js";
 
 export default class ToDos {
-    constructor({id,content,completed} = {}) {
+
+    constructor({
+        id,
+        content,
+        completed
+    } = {}) {
         this.id = id;
         this.content = content;
-        this.completed = completed;    }}
+        this.completed = completed;
+    }
 
-//     // Add a method to the Todos class called addTodo. It should grab the input in the html where users enter 
-//     // the text of the task, then send that along with the key to a SaveTodo() function. Then update the display 
-//     // with the current list of tasks
+    //  Add a method to the Todos class called addTodo. It should grab the input in the html where users enter 
+    //  the text of the task, then send that along with the key to a SaveTodo() function. Then update the display 
+    //  with the current list of tasks
 
-//     // Add a method to the Todos class called addTodo. It should grab the input in the html where users enter the 
-//     // text of the task, then send that along with the key to a SaveTodo() function. Then update the display with 
-//     // the current list of tasks
+    addTodo() {
+        let task = new ToDos;
 
-//     // Add a method to the Todos class called listTodos(). It should use the renderTodoList function to output our 
-//     // todo list when called. It should get called when a todo is added, or removed, and when the Todos class is 
-//     // instantiated.
+            saveTodo(task, ToDos);
+            readFromLS(toDoList);
+            console.log(toDoList);
+        }
 
-//     // completeToDo()
+    
+    //  Add a method to the Todos class called listTodos(). It should use the renderTodoList function to output our 
+    //  todo list when called. It should get called when a todo is added, or removed, and when the Todos class is 
+    //  instantiated.
 
-//     // removeToDo()
+    getTodos() {
+        let list = JSON.parse(localStorage.getItem('toDoList'));
+        let element = document.getElementById("tasks");
+        if (list != "") {
+          renderTodoList(list, element);}
+    }
 
-//     // filterToDo()
+    listTodos() {
+        let list = toDoList;
+        let element = document.getElementById("tasks");
+        document.getElementById('newTask').value='';
+        renderTodoList(list, element);
+    }
 
-//     render() {
-//         return `
-//         <li data-hike-name="${this.name}">
-//             <h2 class="hikeStyles__header">${this.name}</h2>
-//             <div class="container">
-//                 <div class="hikeStyles__image"><img src="${this.imgSrc}" alt="${this.imgAlt}"></div>
-//                 <div class="hikeStyles__content">
-//                     <div>
-//                         <h3>Distance</h3>
-//                         <p>${this.distance}</p>
-//                     </div>
-//                     <div>
-//                         <h3>Difficulty</h3>
-//                         <p>${this.difficulty}</p>
-//                     </div>
-//                 </div>
-//             </div>
-//         </li>`
-//     }
+    completeToDo() {
 
-//     renderDetailed() {
-//         return `
-//         <li>
-//             <h2 class="hikeStyles__header">
-//                 <button onclick="window.location.reload()">Go Back</button>
-//                 <span>${this.name}</span>
-//             </h2>
-//             <div class="hikeStyles__image"><img src="${this.imgSrc}" alt="${this.imgAlt}"></div>
-//             <div class="hikeStyles__content">
-//                 <div>
-//                     <h3>Distance</h3>
-//                     <p>${this.distance}</p>
-//                 </div>
-//                 <div>
-//                     <h3>Difficulty</h3>
-//                     <p>${this.difficulty}</p>
-//                 </div>
-//                 <div>
-//                     <h3> Description </h3>
-//                     <p>${this.description}</p>
-//                 </div>
-//                 <div>
-//                     <h3> Directions </h3>
-//                     <p>${this.directions}</p>
-//                 </div>
-//             </div>
-//         </li>`
-//     }
-// }
+        var ul = document.getElementById("tasks");
+        ul.addEventListener("click", function(e) {
+        if (e.target.className === "checkbox"){
+        e.target.classList.toggle("complete");
+        e.target.parentNode.classList.toggle("completeli")
+        let taskId = e.target.parentNode.id;
+        let status = true;
+        updateTask(taskId, status);}
+        else if (e.target.className === "checkbox complete"){
+        e.target.classList.toggle("complete");
+        e.target.parentNode.classList.toggle("completeli");
+        let taskId = e.target.parentNode.id;
+        let status = false;
+        updateTask(taskId, status);
+        }});
+    }
+
+     removeToDo() {
+        var ul = document.getElementById("tasks");
+        ul.addEventListener("click", function(e) {
+        if (e.target.className === "delete"){
+            let taskId = e.target.parentNode.id;
+            removeTask(taskId);
+            }})
+     }
+
+    filterToDo() {
+        document.getElementById("categories").addEventListener('click', function (e) {
+      
+        if (e.target.id === "completed") {
+            let list = toDoList.filter((task) => task.completed === true);
+            let element = document.getElementById("tasks");
+            renderCompletedList(list, element)
+            e.target.classList.add("shown");
+            document.getElementById("all").classList.remove("shown");
+            document.getElementById("active").classList.remove("shown");
+        }
+
+        else if (e.target.id === "active") {
+            let list = toDoList.filter((task) => task.completed === false);
+            let element = document.getElementById("tasks");
+            renderActiveList(list, element);
+            e.target.classList.add("shown");
+            document.getElementById("completed").classList.remove("shown");
+            document.getElementById("all").classList.remove("shown");    
+        }
+
+        else if (e.target.id === "all") {
+            let list = toDoList;
+            let element = document.getElementById("tasks");
+            renderTodoList(list, element);
+            e.target.classList.add("shown");
+            document.getElementById("active").classList.remove("shown");
+            document.getElementById("completed").classList.remove("shown");    
+        }
+
+    })}}
+    
+    function saveTodo(task, ToDos) {
+
+        let newTask = document.getElementById('newTask').value;
+            task = new ToDos();
+            if (newTask) {
+                task.id = new Date();
+                task.content = newTask;
+                task.completed = false;
+    
+        writeToLS(task, toDoList);
+    }}

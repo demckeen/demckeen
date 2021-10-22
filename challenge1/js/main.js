@@ -1,31 +1,29 @@
 
-// import ToDos from "./toDos";
+import ToDos from "./toDos.js";
 
-class ToDos {
-    constructor({id,content,completed} = {}) {
-        this.id = id;
-        this.content = content;
-        this.completed = completed;    }}
+const toDos = new ToDos;
 
-let newTask = document.getElementById('newTask').value;
+toDos.getTodos();
+
 let button = document.getElementById('addNewTask');
 
-function saveTodo() {
-    const task = new ToDos();
-    let newTask = document.getElementById('newTask').value;
-    if (newTask) {
-        task.id = new Date();
-            //   const form = document.getElementById('addNewTask');
-            //   form.addEventListener('click', logSubmit);     
-        task.content = newTask;
-        task.completed = false;
-    
-        
-        // window.localStorage.setItem('task',JSON.stringify(task));
-        // console.log(JSON.parse(window.localStorage.getItem('task')));
-        }}
+button.addEventListener('click', addTask);
+document.getElementById('newTask').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+      addTask();
+    }
+});
 
-button.addEventListener('click', saveTodo);
+function addTask() {
+    toDos.addTodo();
+    toDos.listTodos();
+}
+
+toDos.completeToDo();
+toDos.removeToDo();
+toDos.filterToDo();
+
+
 
 
 // if (newTask) {
