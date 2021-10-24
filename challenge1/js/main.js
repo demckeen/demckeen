@@ -14,11 +14,12 @@ document.getElementById('newTask').addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
       addTask();
     }
-
-    else if (e.key === '66') {
-      addTask();
-    }
 });
+
+document.getElementById('newTask').addEventListener('keyup', function (e) {
+    if (e.key === 66) {
+      addTask();
+    }});
 
 function addTask() {
     toDos.addTodo();
