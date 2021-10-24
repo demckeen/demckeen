@@ -15,7 +15,7 @@ document.getElementById('newTask').addEventListener('keypress', function (e) {
       addTask();
     }
 
-    else if (e.key === 13) {
+    else if (e.key === '13') {
       addTask();
     }
 });
