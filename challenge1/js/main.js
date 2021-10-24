@@ -9,8 +9,8 @@ getTodos();
 let button = document.getElementById('addNewTask');
 
 document.querySelector("#addTask").addEventListener("submit", function(e){
-      addTask();
-      e.preventDefault();    //stop form from submitting
+      e.preventDefault();
+      addTask();    //stop form from submitting
   });
 
 // button.addEventListener('click', addTask);
