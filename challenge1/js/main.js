@@ -13,6 +13,10 @@ document.getElementById('newTask').addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
       addTask();
     }
+
+    else if (e.key === 13) {
+      addTask();
+    }
 });
 
 function addTask() {

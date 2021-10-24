@@ -1,5 +1,5 @@
 import { readFromLS, writeToLS, toDoList, removeTask, updateTask} from "./ls.js";
-import {qs,renderTodoList,onTouch,renderActiveList,renderCompletedList} from "./utilities.js";
+import {renderTodoList,renderActiveList,renderCompletedList} from "./utilities.js";
 
 export default class ToDos {
 
