@@ -8,18 +8,18 @@ getTodos();
 
 let button = document.getElementById('addNewTask');
 
-button.addEventListener('click', addTask);
-button.addEventListener('touchend', addTask);
-document.getElementById('newTask').addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') {
+document.querySelector("#addTask").addEventListener("submit", function(e){
       addTask();
-    }
-});
+      e.preventDefault();    //stop form from submitting
+  });
 
-document.getElementById('newTask').addEventListener('keyup', function (e) {
-    if (e.key === 66) {
-      addTask();
-    }});
+// button.addEventListener('click', addTask);
+// button.addEventListener('touchend', addTask);
+// document.getElementById('newTask').addEventListener('keypress', function (e) {
+//     if (e.key === 'Enter') {
+//       addTask();
+//     }
+// });
 
 function addTask() {
     toDos.addTodo();
