@@ -4,7 +4,7 @@ export {readFromLS, writeToLS, toDoList, removeTask, updateTask};
 // the value is stored under in LS
 // @return {array} The value as an array of objects
 
-let toDoList = [];
+var toDoList = [];
 
 function readFromLS() {
     toDoList = JSON.parse(localStorage.getItem('toDoList'));
@@ -16,6 +16,9 @@ function readFromLS() {
 // * @param {array} data The information to be stored as an array of objects. Must be serialized.
 
 function writeToLS(task, toDoList) { 
+    if(toDoList === null) {
+        toDoList = [];
+    }
     toDoList.push(task);
     localStorage.setItem("toDoList", JSON.stringify(toDoList));
  }

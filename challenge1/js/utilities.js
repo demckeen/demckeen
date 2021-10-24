@@ -14,6 +14,7 @@ our list elements into.
 */
 
 function renderTodoList(list, element) {
+    if(list != null) {
     element.innerHTML = '';
     for (let i = 0; i < list.length; i++) {
         let item = document.createElement("li");
@@ -39,7 +40,7 @@ function renderTodoList(list, element) {
         item.appendChild(task);
         item.appendChild(remove);
 
-        element.appendChild(item);
+        element.appendChild(item);}
 
     }
 }

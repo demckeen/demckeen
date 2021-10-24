@@ -125,11 +125,17 @@ export default class ToDos {
     }}
 
     function countTasks() {
+        let remaining;
+
+        if(toDoList === null) {
+            remaining = "0";
+        }
+        else {
         let alltasks = toDoList.length;
         let completed = document.getElementsByClassName("complete");
         completed = completed.length;
 
-        let remaining = alltasks - completed;
+        remaining = alltasks - completed;}
 
         document.getElementById("counter").innerHTML = remaining;
     }
