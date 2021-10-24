@@ -9,6 +9,7 @@ getTodos();
 let button = document.getElementById('addNewTask');
 
 button.addEventListener('click', addTask);
+button.addEventListener('touchend', addTask);
 document.getElementById('newTask').addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
       addTask();
