@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Week Four Notes</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Dana McKeen">
+    <meta name="description" content="This page contains my notes for Week Four of Course reading 
+    BYUI WD330.">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+    <title>Week Seven Notes</title>
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/notes.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="headerText"></div>
+        <h1>Dana McKeen</h1>
+        <h2>WDD 330: Portfolio Site</h2>
+        <a href="../index.html">Return to main portfolio site</a>
+        </div>
+    </header>
+    <main>
+        <div class="text">
+            <div class="heading">
+                <h1>Week Seven Notes</h1>
+            </div>
+            <div class="moreThoughts">
+                <h2>Thoughts</h2>
+                <p>
+                    Here are some little snippets about things I felt seemed useful in the reading that I hope to
+                    remember:
+                <ul>
+                    <li>call() - to set “this” within a function, parameters can be passed after the first value (which
+                        is always this), functions that don’t refer to a “this” can use call() but you pass “null” for
+                        the “this” value as a first parameter. (apply is the same but arguments can be passed as array)
+                    </li>
+                    <li>Place entire function inside parentheses to call it immediately - anonymous no name function
+                    </li>
+                    <li>Temporary Variables - “Placing any code that uses the temporary variable inside an IIFE will
+                        ensure it’s only available while the IIFE is invoked, then it will disappear. The example that
+                        follows uses an IIFE to swap the value of two global variables, a and b. This process requires
+                        the use of a temporary variable, called temp, which only exists while the IIFE is invoked:”
+                        Use an IIFE (anonymous self-invoking function) to initialize conditions for code</li>
+                    <li>Redefined functions lose properties previously set</li>
+                    <li>Closure - A function within a function can have access to variables declared by it's parent
+                        function
+                        including making changes to those variables.
+                    </li>
+                    <li>Functional programming - using functions that are pure code to be as versatile as possible</li>
+                    <li>AJAX - Javascript that can communicate with outside sources/servers
+                        Have used in the past with API and JSON.
+                    </li>
+                </ul>
+                </p>
+            </div>
+            <div class='moreThoughts'>
+                <p>Diving back into the Hikes Team Activity with the knowledge gained through working on
+                    the ToDo List Challenge was really cool. I had a better understanding of some of the
+                    structuring, but also with what we wanted it to do and how to accomplish our Local
+                    Storage elements.
+                </p>
+            </div>
+            <div class="hikeArea">
+                <h1>Great Hikes</h1>
+                <ul id="hikes" class="hikeStyles"></ul>
+            </div>
+        </div>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
