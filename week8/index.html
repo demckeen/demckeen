@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Dana McKeen">
+    <meta name="description" content="This page contains my notes for Week Four of Course reading 
+    BYUI WD330.">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+    <title>Week Seven Notes</title>
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/notes.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="headerText"></div>
+        <h1>Dana McKeen</h1>
+        <h2>WDD 330: Portfolio Site</h2>
+        <a href="../index.html">Return to main portfolio site</a>
+        </div>
+    </header>
+    <main>
+        <div class="text">
+            <div class="heading">
+                <h1>Week Seven Notes</h1>
+            </div>
+            <div class="moreThoughts">
+                <h2>Thoughts</h2>
+                <p>One of the main things I wanted to remember from the readings this week is about Canvas, because
+                    this is new to me:</p>
+                <ul>
+                    <li>Canvas - Drawing with Javascript
+                        <ul>
+                            <li>
+                                Width and height must be set in HTML or else CSS styling just shows the same thing
+                                bigger
+                                vs giving more pixels available
+                            </li>
+                            <li>“You'll see in the book's code that we use a simple helper function called addEvent
+                                that uses addEventListener if it's supported; In the case where there's no support, it
+                                uses
+                                an old method called attachEvent, the method IE8 supports.” - that is good to know
+                            </li>
+                            <li>Canvas lacks accessibility, being pure imagery created in JS</li>
+                            <li>Change image to grayscale using a for loop to loop through every pixel :O formula for
+                                converting to grayscale included in code below.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="codesample" id="codesample">
+                    <pre>
+                        <code>
+function manipulateImage() {
+    var canvas = document.getElementById("demo7");
+    var context = canvas.getContext("2d");
+    var image = document.getElementById("secondImage");
+    context.drawImage(image, 60, 60);
+                             
+    var imageData = context.getImageData(0, 0, 200, 200);
+                               
+    for (var i = 0; i < imageData.data.length; i += 4) {
+        var red = imageData.data[i];
+        var green = imageData.data[i + 1];
+        var blue = imageData.data[i + 2];
+                                   
+        var grayscale = red * 0.3 + green * 0.59 + blue * 0.11;
+                                   
+        imageData.data[i] = grayscale;
+        imageData.data[i + 1] = grayscale;
+        imageData.data[i + 2] = grayscale;
+        }
+    context.putImageData(imageData, 0, 0);
+    }                             
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class='moreThoughts'>
+                <p>I am also very interested in the "drag and drop" opportunities, as this is something I had been
+                    casually wondering about in terms of implementation for my final project. I was very excited
+                    to see that as a subject for this week's reading, and below is my execution of that exercise from
+                    the material.
+                </p>
+            </div>
+            <article id="ac3">
+                <h1>Wai-Aria? HAHA!</h1>
+                <h2 id="catHeading">Feed Me!</h2>
+                <img id="cat" src="images/cat.jpg" data-src="images/cat.jpg" alt="WAI-ARIA Cat">
+                <p id="mouseContainer" class="mc">
+                    <img src="images/mouse.png" data-src="images/mouse.png" alt="mouse treat" id="mouse1"
+                        draggable="true">
+                    <img src="images/mouse.png" data-src="images/mouse.png" alt="mouse treat" id="mouse2"
+                        draggable="true">
+                    <img src="images/mouse.png" data-src="images/mouse.png" alt="mouse treat" id="mouse3"
+                        draggable="true">
+                </p>
+            </article>
+        </div>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

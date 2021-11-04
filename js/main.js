@@ -19,6 +19,12 @@ const links = [
 
     {label: "Week 5: Notes & Exercises",
     url: "week5/index.html"},
+
+    {label: "Week 7: Notes & Exercises",
+    url: "week7/index.html"},
+
+    {label: "Week 8: Notes & Exercises",
+    url: "week8/index.html"}
 ]
 
 for(var i=0; i<links.length; i++){
