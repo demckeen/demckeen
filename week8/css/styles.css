@@ -26,8 +26,16 @@ article h1 {
 }
 
 #codesample {
-  padding: 2rem;
+  padding: 0 2rem 0 2rem;
   margin: auto;
+}
+
+div.Thoughts {
+  padding: 0 2rem 0 2rem;
+}
+
+div.moreThoughts {
+  padding: .5rem 2rem .5rem 2rem;
 }
 
 pre {
@@ -37,10 +45,14 @@ pre {
   white-space: -pre-wrap;
   white-space: -o-pre-wrap;
   word-wrap: break-word;
+  margin: 0;
 }
 
 pre code {
   display: block;
+  max-width: 600px;
+  margin: auto;
+  padding: 0;
 }
 
 #cat img {
@@ -55,7 +67,15 @@ pre code {
   grid-template-columns: repeat(3, auto);
 }
 
-@media only screen and (min-width: 34rem) {
+.questions {
+  padding-bottom: 2rem;
+}
+
+li {
+  margin-bottom: 1rem;
+}
+
+@media only screen and (min-width: 35.5rem) {
 
   article {
     display: grid;
@@ -90,6 +110,25 @@ pre code {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, auto);
     grid-area: mice;
+  }
+
+  div.Thoughts {
+    padding: 0;
+  }
+
+  .questions {
+    align-self: center;
+  }
+
+  .questions ul, .questions h2 {
+    margin: 0;
+  }
+
+  .textGrid {
+    display: grid;
+    gap: 5vw;
+    grid-template-columns: 1fr 3fr;
+    padding: 0 4vw 2rem 4vw;
   }
 
 }

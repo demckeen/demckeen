@@ -29,31 +29,43 @@
             <div class="heading">
                 <h1>Week Seven Notes</h1>
             </div>
-            <div class="moreThoughts">
-                <h2>Thoughts</h2>
-                <p>One of the main things I wanted to remember from the readings this week is about Canvas, because
-                    this is new to me:</p>
-                <ul>
-                    <li>Canvas - Drawing with Javascript
-                        <ul>
-                            <li>
-                                Width and height must be set in HTML or else CSS styling just shows the same thing
-                                bigger
-                                vs giving more pixels available
-                            </li>
-                            <li>“You'll see in the book's code that we use a simple helper function called addEvent
-                                that uses addEventListener if it's supported; In the case where there's no support, it
-                                uses
-                                an old method called attachEvent, the method IE8 supports.” - that is good to know
-                            </li>
-                            <li>Canvas lacks accessibility, being pure imagery created in JS</li>
-                            <li>Change image to grayscale using a for loop to loop through every pixel :O formula for
-                                converting to grayscale included in code below.</li>
-                        </ul>
-                    </li>
-                </ul>
-                <div class="codesample" id="codesample">
-                    <pre>
+            <div class="textGrid">
+                <div class="questions">
+                    <h2>Exercises</h2>
+                    <ul class="qList">
+                        <li><a href="#ac3">Drag and Drop Cat</a></li>
+                        <li><a href="apiactivity.html">Star Wars Starships</a></li>
+                    </ul>
+                </div>
+                <div class="Thoughts">
+                    <h2>Thoughts</h2>
+                    <p>One of the main things I wanted to remember from the readings this week is about Canvas, because
+                        this is new to me:</p>
+                    <p>
+                        Canvas - Drawing with Javascript
+                    <ul>
+                        <li>
+                            Width and height must be set in HTML or else CSS styling just shows the same thing
+                            bigger
+                            vs giving more pixels available
+                        </li>
+                        <li>“You'll see in the book's code that we use a simple helper function called addEvent
+                            that uses addEventListener if it's supported; In the case where there's no support,
+                            it
+                            uses
+                            an old method called attachEvent, the method IE8 supports.” - that is good to know
+                        </li>
+                        <li>Canvas lacks accessibility, being pure imagery created in JS</li>
+                        <li>Change image to grayscale using a for loop to loop through every pixel :O formula
+                            for
+                            converting to grayscale included in code below.</li>
+                    </ul>
+
+                    </p>
+                </div>
+            </div>
+            <div class="codesample" id="codesample">
+                <pre>
                         <code>
 function manipulateImage() {
     var canvas = document.getElementById("demo7");
@@ -78,7 +90,6 @@ function manipulateImage() {
     }                             
                         </code>
                     </pre>
-                </div>
             </div>
             <div class='moreThoughts'>
                 <p>I am also very interested in the "drag and drop" opportunities, as this is something I had been
