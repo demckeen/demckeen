@@ -24,7 +24,10 @@ const links = [
     url: "week7/index.html"},
 
     {label: "Week 8: Notes & Exercises",
-    url: "week8/index.html"}
+    url: "week8/index.html"},
+
+    {label: "Week 9: Drumkit Exercise",
+    url: "week9\drumkit\drumkit.html"}
 ]
 
 for(var i=0; i<links.length; i++){

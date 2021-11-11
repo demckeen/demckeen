@@ -1,0 +1,192 @@
+html {
+  font-size: 10px;
+  background-color: gray; 
+}
+
+body,html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.kitContainer {
+  width: 940px;
+  margin: auto;
+  position: relative;
+}
+
+.keys img {
+  display: block;
+  width: 100%;
+  object-fit: contain;
+  margin: auto;}
+
+.key {
+  font-size: 1.5rem;
+  transition: all .07s ease;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 .5rem black;
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(-10deg); }
+ 30% { transform: rotate(10deg); }
+ 60% { transform: rotate(-10deg); }
+100% { transform: rotate(0deg); }
+}
+
+.playing {
+  animation: wiggle 1s linear;
+}
+
+kbd {
+  display: block;
+  font-size: 4rem;
+}
+
+.sound {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  color: #ffc600;
+  text-shadow: 0 1 #1f1e1e;
+}
+
+div[data-key="65"] {
+  background: url(images/transparenthands.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 12%;
+  height: 20%;
+  overflow: visible;
+  position: absolute;
+  left: 45%;
+  top: 10%;
+}
+
+div[data-key="65"] kbd {margin-top: 2rem;}
+
+div[data-key="65"] .sound {color: black;}
+
+div[data-key="83"] {
+  background: url(images/drumkitimages/Hihat@0.5x.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 20%;
+  height: 20%;
+  overflow: visible;
+  z-index:2;
+  position: absolute;
+  top: 52%;
+  left: 0;
+}
+
+div[data-key="68"] {
+  background: url(images/drumkitimages/BassDrum@0.5x.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 18%;
+  height: 27%;
+  overflow: visible;
+  z-index:2;
+  position: absolute;
+  bottom: 0;
+  left: 45%;
+}
+
+div[data-key="68"] kbd, div[data-key="68"] span {margin-top: 5rem;
+  overflow: hidden;}
+
+div[data-key="70"] {
+  background: url(images/drumkitimages/LeftCymbal@0.5x.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 29%;
+  height: 17.5%;
+  overflow: visible;
+  z-index:2;
+  position: absolute;
+  top: 24%;
+  left: 2%;
+}
+
+div[data-key="70"] kbd, div[data-key="70"] span {margin: 2rem 5rem 0 0;}
+
+div[data-key="71"] {
+  background: url(images/drumkitimages/Floortom@0.5x.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 30%;
+  height: 26%;
+  overflow: visible;
+  z-index:2;
+  position: absolute;
+  bottom: 8%;
+  right: 8%;
+}
+
+div[data-key="71"] kbd, div[data-key="71"] span {margin-top: 0rem;}
+
+div[data-key="72"] {
+  background: url(images/drumkitimages/RightCymbal@0.5x.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 30%;
+  height: 19%;
+  overflow: visible;
+  z-index:2;
+  position: absolute;
+  top: 39%;
+  right: 12%;
+}
+
+div[data-key="72"] kbd, div[data-key="72"] span {margin-top: 5rem;
+  margin-left: -6rem;}
+
+div[data-key="74"] {
+  background: url(images/drumkitimages/Snare@0.5x.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 24.5%;
+  width: 26%;
+  overflow: visible;
+  z-index:2;
+  position: absolute;
+  left: 19.5%;
+  bottom: 6%;
+}
+
+div[data-key="74"] kbd {margin-top: 4rem;}
+
+div[data-key="75"] {
+  background: url(images/drumkitimages/Tom@0.5x.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 17%;
+  height: 15%;
+  overflow: visible;
+  z-index:2;
+  position: absolute;
+  left: 28.5%;
+  bottom: 40%;
+}
+
+div[data-key="76"] {
+  background: url(images/drumkitimages/tink@0.5x.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 9%;
+  height: 6.5%;
+  overflow: visible;
+  z-index:2;
+  position: absolute;
+  right: 23.5%;
+  top: 42%;
+}
+
+div[data-key="76"] kbd, div[data-key="76"] span {
+  display: block;
+  margin-left: 8rem;
+  margin-top: -2rem;
+  margin-bottom: 2rem;}
