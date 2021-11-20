@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Dana McKeen">
+    <meta name="description" content="This page contains my notes for Week Four of Course reading 
+    BYUI WD330.">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+    <title>Week Ten Notes</title>
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/notes.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="headerText"></div>
+        <h1>Dana McKeen</h1>
+        <h2>WDD 330: Portfolio Site</h2>
+        <a href="../index.html">Return to main portfolio site</a>
+        </div>
+    </header>
+    <main>
+        <div class="text">
+            <div class="heading">
+                <h1>Week Ten Notes</h1>
+            </div>
+            <div class="moreThoughts">
+                <h2>Thoughts</h2>
+                <p>
+                    I became very intrigued by the idea of custom validation this week in the reading, so 
+                    I went down the rabbit hole and decided to create a Mad Libs style page that would be 
+                    able to check the inputs for specific criteria. Initially I wanted to be able to validate 
+                    parts of speech, but without server based validation processes that looked to be impossible. 
+                    I found an API that could contain parts of speech information, but it was too complex to 
+                    develop a function that could reliably pull that information for any term that was entered. 
+                    So I had to scale back and create an error checking function that simply looked for length  
+                    on certain words and checked others against numerical ranges or RegExp formats. It was also a good 
+                    challenge placing and clearing the error messages as appropriate. Please enjoy my Silly Story.
+                </p>
+            </div>
+            <div class='sillyStories'>
+                <h1>Silly Story Creator</h1>
+    <div class="storySection">
+	<form id="story1form">
+        <h2>Story Number One</h2>
+        <span class="error form" id="emptyerror" aria-live="polite"></span>
+        <p>
+            <label for="adj1">
+                <div class="label text"><span>Enter an adjective:</span><span class="hint adj"></span></div>
+                <input type="text" id="adj1" name="adj1" class="input">
+                <span class="error adj1" id="adj1error" aria-live="polite"></span>
+            </label>
+        </p>
+        <p>
+            <label for="noun1">
+                <div class="label text"><span>Enter a noun:</span><span class="hint noun"></span></div>
+                <input type="text" id="noun1" name="noun1" class="input">
+                <span class="error noun1" id="noun1error" aria-live="polite"></span>
+            </label>
+        </p>
+        <p>
+            <label for="age1">
+                <div class="label text"><span>Enter an age:</span><span class="hint age"></span></div>
+                <input type="text" id="age1" name="age1" class="input">
+                <span class="error age1" id="age1error" aria-live="polite"></span>
+            </label>
+        </p>
+        <p>
+            <label for="age2">
+                <div class="label text"><span>Enter another age:</span><span class="hint age"></span></div>
+                <input type="text" id="age2" name="age2" class="input">
+                <span class="error age2" id="age2error" aria-live="polite"></span>
+            </label>
+        </p>
+        <p>
+            <label for="gerund1">
+                <div class="label text"><span>Enter a verb in present participle tense:</span><span class="hint gerund"></span></div>
+                <input type="text" id="gerund1" name="gerund1" class="input">
+                <span class="error gerund1" id="gerund1error" aria-live="polite"></span>
+            </label>
+        </p>
+        <p>
+            <label for="person1">
+                <div class="label text"><span>Enter the name of someone you know:</span></div>
+                <input type="text" id="person1" name="person1" class="input">
+                <span class="error person1" id="person1error" aria-live="polite"></span>
+            </label>
+        </p>
+        <p>
+            <label for="food1">
+                <div class="label text"><span>Enter a food:</span><span class="hint food"></span></div>
+                <input type="text" id="food1" name="food1" class="input">
+                <span class="error food1" id="food1error" aria-live="polite"></span>
+            </label>
+        </p>
+        <p>
+            <label for="adj2">
+                <div class="label text"><span>Enter an adjective:</span><span class="hint adj"></span></div>
+                <input type="text" id="adj2" name="adj2" class="input">
+                <span class="error adj2" id="adj2error" aria-live="polite"></span>
+            </label>
+        </p>
+        <p>
+            <label for="year1">
+                <div class="label text"><span>Enter a year:</span><span class="hint year"></span></div>
+                <input type="text" id="year1" name="year1" class="input">
+                <span class="error year1" id="year1error" aria-live="polite"></span>
+            </label>
+        </p>
+        <p>
+            <label for="pnoun1">
+                <div class="label text"><span>Enter a plural noun:</span><span class="hint pnoun"></span></div>
+                <input type="text" id="pnoun1" name="pnoun1" class="input">
+                <span class="error pnoun1" id="pnoun1error" aria-live="polite"></span>
+            </label>
+        </p>
+        <p>
+            <label for="verb2">
+                <div class="label text"><span>Enter a past tense verb:</span><span class="hint verbpt"></span></div>
+                <input type="text" id="verb2" name="verb2" class="input">
+                <span class="error verb2" id="verb2error" aria-live="polite"></span>
+            </label>
+        </p>
+        <p>
+            <label for="adj3">
+                <div class="label text"><span>Enter an adjective:</span><span class="hint adj"></span></div>
+                <input type="text" id="adj3" name="adj3" class="input">
+                <span class="error adj3" id="adj3error" aria-live="polite"></span>
+            </label>
+        </p>
+        <p>
+            <label for="num1">
+                <div class="label text"><span>Enter a number:</span><span class="hint num"></span></div>
+                <input type="text" id="num1" name="num1" class="input">
+                <span class="error num1" id="num1error" aria-live="polite"></span>
+            </label>
+        </p>
+        <p>
+            <label for="noun2">
+                <div class="label text"><span>Enter a noun:</span><span class="hint noun"></span></div>
+                <input type="text" id="noun2" name="noun2" class="input">
+                <span class="error noun2" id="noun2error" aria-live="polite"></span>
+            </label>
+        </p>
+        <p>
+            <label for="pnoun2">
+                <div class="label text"><span>Enter a plural noun:</span><span class="hint pnoun"></span></div>
+                <input type="text" id="pnoun2" name="pnoun2" class="input">
+                <span class="error pnoun2" id="pnoun2error" aria-live="polite"></span>
+            </label>
+        </p>
+        <button type="submit" class="button" id="story1btn">Write It!</button>
+    </form>
+    <div id="story1view"></div>
+</div>
+            </div>
+        </div>
+    </main>
+    <script src="main.js"></script>
+</body>
+
+</html>

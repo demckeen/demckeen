@@ -1,0 +1,113 @@
+/* Fonts from Google Fonts - more at https://fonts.google.com */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,500;1,500&display=swap');
+
+  
+  form {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  p * {
+    display: block;
+  }
+
+  form p {margin-top: 6px;}
+
+  #story1form .text {
+      padding-top:0;
+  }
+  
+  input {
+    -webkit-appearance: none;
+  
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgb(185, 185, 185);
+    margin: 3px 0 0 0;
+    padding: 0 0 0 5px;
+    border-radius: 3px;
+    transition: all .2s linear;
+  
+    font-family: inherit;
+    font-size: 90%;
+  
+    box-sizing: border-box;
+  }
+
+  input:focus {
+      border: 1px solid black;
+      box-shadow: 1px 2px 5px gray;
+  }
+
+  button {border: none;
+    background-color: rgb(87, 0, 87);
+    color: white;
+    border-radius: 5px;
+    height: 40px;
+    width: 90px;
+    font-size: 1rem;}
+  
+  /* This is our style for the invalid fields */
+  input.invalid{
+    border-color: #900;
+    background-color: #FDD;
+  }
+  
+  input:focus.invalid {
+    outline: none;
+  }
+  
+  /* This is the style of our error messages */
+  .error {
+    width  : 100%;
+    padding: 0;
+  
+    font-size: 80%;
+    color: white;
+    background-color: #900;
+    border-radius: 0 0 5px 5px;
+    box-sizing: border-box;
+  }
+  
+  .error.active {
+    padding: 0.3em;
+  }
+
+  .userInput {display: inline;
+    color:rgb(87, 0, 87);
+    font-weight: bold;}
+
+  h1 {text-align: center;}
+  #story1view {margin: 1rem 2rem 1rem 2rem;}
+
+  .storySection {padding-bottom: 2rem;}
+
+@media only screen and (min-width: 32.5em) { 
+
+    body {width: 100%;}
+
+    form {padding: 0 1rem 0 1rem;}
+
+    input {height: 28px;
+        margin-top: 2px;}
+
+    .storySection {
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        grid-template-rows: 1fr;
+        gap: 2rem;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    #story1view h1 {
+        margin-bottom: 2rem;
+
+    }
+
+    #story1view {margin: 0 3rem 2rem 0;}
+
+    #story1form {justify-self: center;}
+    }
