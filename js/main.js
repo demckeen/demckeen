@@ -27,7 +27,10 @@ const links = [
     url: "week8/index.html"},
 
     {label: "Week 9: Drumkit Exercise",
-    url: "week9/drumkit/drumkit.html"}
+    url: "week9/drumkit/drumkit.html"},
+
+    {label: "Week 10: Silly Story Exercise",
+    url: "week10/index.html"}
 ]
 
 for(var i=0; i<links.length; i++){
