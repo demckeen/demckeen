@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://use.fontawesome.com/releases/v5.13.0/css/all.css");
+
+.headerBar h1 {
+    font-family: 'Poppins', sans-serif;
+    margin: .5rem 2rem;
+}
+
+.contentBox {
+    display: grid;
+    grid-template-columns: 1fr 330px;
+    grid-template-rows: 1fr;
+}
+
+#apiArea {
+    width: 100%;
+    display: grid;
+    gap: .5rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(auto, 300px);
+    grid-auto-flow: row;
+}
+
+#notesArea {
+    display: grid;
+}

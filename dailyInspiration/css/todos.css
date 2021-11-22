@@ -1,0 +1,199 @@
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+#notesArea {font-family: 'Poppins', sans-serif;
+    color: #797979;}
+
+.bottomBars {max-width: 320px;
+    align-self: end;}
+
+.listContainer {border: none;
+    border-radius: 10px;
+    box-shadow: 1px 2px 6px grey;
+    overflow: hidden;
+    max-width: 300px;
+    height: 500px;
+    margin-right: 10px;
+    justify-self: right;
+    display: grid;
+    grid-template-rows: 55px auto auto;}
+
+#notesArea h1 {text-align: center;
+    background-color: #d4d4d4;
+    color:#3a3a3a;
+    margin: 0;
+    padding: .5rem;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.3rem;}
+
+.filters {display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 70px 230px;
+    max-width: 320px;
+    padding: 5px 5px 5px .75rem;
+    background-color: #ebebeb;}
+
+.categories {display: grid;
+    justify-items: center;
+    text-align: left;
+    grid-template-columns: repeat(3, auto);
+    color:#3a3a3a;
+    font-weight: 300;}
+
+.categories div {
+    margin: 0 10px 0 10px;
+}
+
+.addTask {display: grid;
+    grid-template-columns: 40px auto 40px;
+    grid-template-rows: 1fr;
+    align-items: center;
+    gap: 10px;
+    padding: 10px .75rem;
+    background-color: #535353;
+    color: #ebebeb;
+    }
+
+/* .listItems {height: 100%;} */
+
+#counter {font-weight: 600;}
+
+.taskRemain {font-weight: 300;
+    flex-basis: 50%;
+    color: #3a3a3a;
+    align-self: center;}
+
+.shown {background-color: white;
+    border-radius: 5px;
+    font-weight: 600;}
+
+#active, #all, #completed {padding: 0px 10px 0px 10px;
+    margin: 0;}
+
+#notesArea button {background-color: #ebebeb;
+    color: #3a3a3a;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    justify-self: right;
+    font-size: 1.5rem;
+    line-height: .5rem;
+    border-radius: 3px;
+    height: 26px;
+    width: 26px;
+    padding: 0;
+    cursor: pointer;}
+
+#notesArea input {height: 24px;
+    border:none;
+    min-width: 0;
+    max-width: 320px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;}
+
+#notesArea label {
+    margin-right: -5px;}
+
+.checkbox::before {
+    font-family: "Font Awesome 5 Free"; 
+    content: "\f0c8";
+    color: #4f5d75;
+    display: inline-block;
+    font-size: 1.2rem;
+    text-align: center;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    transition: all .1s;
+}
+
+.task span::before, .task span::after {margin-top: 0;
+    width: 44px;
+    cursor: pointer;}
+
+.delete:hover:before {
+    font-size: 1.3rem;
+    color:#3a3a3a;
+    transition: all .5s;
+}
+
+.checkbox:hover:before {
+    font-size: 1.5rem;
+    color: #3a3a3a;
+    transition: all .5s;
+}
+
+.complete::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f14a";
+    color:#3a3a3a;
+    display: inline-block;
+    text-align: center;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    transition: all .1s;
+}
+
+.delete::before {
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; 
+    content: "\f00d";
+    color: #535353;
+    display: inline-block;
+    text-align: center;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    transition: all .1s;
+}
+
+#notesArea ul {list-style-type: none;
+    padding: 0px 0px 5px 0px;
+    margin: 0;}
+
+#notesArea li.completeli {text-decoration: line-through;
+    background-color:#ebebeb;
+    color: #3a3a3a;
+    transition: all .5s; }
+
+#notesArea li {transition: all .2s;
+    border-bottom: 2px solid #ebebeb;}
+
+.completeli > .delete::before {
+    color:#3a3a3a;
+    transition: all .5s;
+}
+
+.task {display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 5px 15px 5px 15px;}
+
+#notesArea span.description {flex-grow: 1;
+    margin-left: 10px;}
+
+.checkbox {order: -1;}
+
+@media only screen and (min-width: 34rem) {
+
+    .listContainer {
+        max-width: 320px;
+    }
+
+    .task {padding: 5px .75rem 5px .75rem;}
+
+    .categories {flex-direction: row;
+        align-items: center;
+        justify-content: flex-end; }
+
+    #active, #all, #completed {padding: 5px 10px 5px 10px;
+        margin: 0;}
+}
