@@ -1,111 +1,71 @@
-class App {
-    constructor() {
-        this.data = []
-        this.nextUrl = ""
-        this.prevUrl = ""
-    }
+let poemData = [];
 
-    async init() {
-        await this.getdata('https://www.poemist.com/api/v1/randompoems')
-        displayHTML(buildListView(this.data))
-    }
-
-    async getdata(url) {
-        const data = await fetchdata(url)
-        console.log(this)
-        this.data = data
-        // console.log(poems);
-        // this.nextUrl = data.next
-        // this.prevUrl = data.previous
-    }
-
-    // async next() {
-    //     if (!this.nextUrl) return
-    //     await this.getdata(this.nextUrl)
-    //     displayHTML(buildListView(this.data))
-    // }
-}
-
-const app = new App()
-app.init()
-
-// async function to get data set and return it
-async function fetchdata(url) {
+async function loadPoemData() {
     try {
-        return await fetch(url).then(res => res.json())
-    } catch (e) {
-        console.error(e)
-    }
+        const result = await fetch('https://www.poemist.com/api/v1/randompoems');
+        const data = await result.json();
+        console.log(data);
+        return data;
+    } catch (error) {
+        console.log('loadPoemData', error);
+    }}
+
+async function main() {
+    let apiArea = document.getElementById('apiArea');
+    let poemCard = document.createElement('div');
+    poemCard.setAttribute('id', 'poemCard');
+    poemCard.setAttribute('class', 'poemCard noselect');
+    apiArea.appendChild(poemCard);
+    poemCard.innerHTML = "<span id='loadingbox'>Loading Poem...<span>"
+    poemData = await loadPoemData();
+    const poem = poemData[0];
+    displayPoem(buildCard(poem));
 }
 
-function displayHTML(html) {
-    document.getElementById('view').innerHTML = html
-    showDetails();
+function displayPoem(html) {
+    poemCard.innerHTML = html
+    document.getElementById('poemCard').addEventListener('click', refreshPoem);
 }
-
-function buildListView(data) {
-    return `
-        <div class="list">
-            ${data.reduce((acc, item) => {
-                return acc + buildCard(item)
-            }, "")}
-        </div>
-    `
-}
-
-let id = 0;
 
 function buildCard(item) {
-    id += 1;
     //insert API specific details you wish to display on the card element
     if (!item.poet.name) {
         item.poet.name = "Unknown";
     }
 
+    console.log(item.url);
+
     return `
-        <section class="card noselect" id="${ id }">
-            <div class="cardheading">
-            <h2 class="itemTitle">${ item.title }</h2>
-            <h3 class="poetName">${ item.poet.name }</h3></div>
-            <text class="poem">${ item.content }</text>
-            <div class="links>
-            <a href="${ item.url }>Link to Poem</a> | <a href="${item.poet.url}">Link to Poet</a></div>
-        </section>
+            <div class="poemCardheading">
+            <h2 class="poemTitle" id="poemTitle">${ item.title }</h2>
+            <h3 class="poetName" id="poetName">${ item.poet.name }</h3></div>
+            <text class="poem" id="poem">${ item.content }</text>
+            <div class="poetryLinks" id="poetryLinks">
+            <a id="poemLink" href="${ item.url }">Link to Poem</a> | <a id="poetLink" href="${item.poet.url}">Link to Poet</a></div>
     `
 }
 
+async function refreshPoem(poem) {
+    let title = document.getElementById('poemTitle');
+    let name = document.getElementById('poetName');
+    let content = document.getElementById('poem');
+    title.innerHTML = "Loading New Poem...";
+    name.innerHTML = '';
+    content.innerHTML = '';
+    
+    poemData = await loadPoemData();
+    poem = poemData[0];
+    if (!poem.poet.name) {poem.poet.name = "Unknown";}
+    
+    console.log(poem);
 
-// add function to window object so it can be used in button onClick handler
-const clearData = () => {
-    var pageData = document.getElementById("view");
-    while (pageData.firstChild) {
-        pageData.removeChild(pageData.firstChild);
-    }
+    title = document.getElementById('poemTitle');
+    name = document.getElementById('poetName');
+    content = document.getElementById('poem');
+    poetLink.setAttribute('href', poem.url);
+    poetLink.setAttribute('href', poem.poet.url);
+    title.innerHTML = poem.title;
+    name.innerHTML = poem.poet.name;
+    content.innerHTML = poem.content;}
 
-}
-
-// add function to window object so it can be used in button onClick handler
-window.prevData = async () => {
-    await app.prev()
-}
-
-// add function to window object so it can be used in button onClick handler
-window.nextData = async () => {
-    await app.next()
-}
-
-// https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
-function numberWithCommas(x) {
-    return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
-}
-
-function showDetails() {
-    let card = document.getElementsByClassName("card");
-    for (var i = 0; i < card.length; i++) {
-        card[i].addEventListener('click', function(e) {
-        let elid = e.target.closest('section').id;
-        console.log(elid);
-        let element = document.getElementById(elid);
-        console.log(element);
-        element.querySelector(".details").classList.toggle('hidden');});}}
-
+main()

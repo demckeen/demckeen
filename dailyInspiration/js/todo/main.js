@@ -37,3 +37,21 @@ function prepareEventHandlers() {
 toDos.completeToDo();
 toDos.removeToDo();
 toDos.filterToDo();}
+
+function toggleIdeas() {
+  let x = document.getElementById("listContent");
+  let button = document.getElementById('listDropTitle');
+  let page = document.getElementById('pageWrapper');
+
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    button.classList.add('faded');
+    page.classList.add('gridded');
+  } else {
+    x.style.display = "none";
+    button.classList.remove('faded');
+    page.classList.remove('gridded');
+  }
+}
+
+document.getElementById('listDropTitle').addEventListener('click', toggleIdeas);

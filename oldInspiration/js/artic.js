@@ -24,7 +24,6 @@ async function main() {
     artdata = await loadartdata();
     const artwork = loadRandomArtwork(artdata);
     displayArtwork(buildArtworkCard(artwork));
-    buildOverlay(artwork);
 }
 
 function displayArtwork(html) {
@@ -60,37 +59,13 @@ async function refreshArtworkCard(artwork) {
     if (!artwork.artist_title) {
         artwork.artist_title = "Unknown";
     }
-    let fullImg = document.getElementById('fullImg');
-    let image = document.getElementById('artimg');
-    let title = document.getElementById('artworkTitle');
+    image = document.getElementById('artimg');
+    title = document.getElementById('artworkTitle');
     let name = document.getElementById('artistName');
     let id = artwork.image_id;
     image.setAttribute('src', `https://www.artic.edu/iiif/2/${ id }/full/843,/0/default.jpg`);
-    fullImg.setAttribute('src', `https://www.artic.edu/iiif/2/${ id }/full/843,/0/default.jpg`);
     title.innerHTML = artwork.title;
-    name.innerHTML = artwork.artist_title;
-}
-
-function on() {
-    document.getElementById("imgOverlay").style.display = "block";
-}
-
-function off() {
-    document.getElementById("imgOverlay").style.display = "none";
-}
-
-function buildOverlay(artwork) {
-    let imgOverlay = document.createElement('div');
-    let fullImg = document.createElement('img');
-    imgOverlay.setAttribute('id','imgOverlay');
-    fullImg.setAttribute('id', 'fullImg');
-    fullImg.setAttribute('src', `https://www.artic.edu/iiif/2/${ artwork.image_id }/full/843,/0/default.jpg`);
-    apiArea.appendChild(imgOverlay);
-    imgOverlay.appendChild(fullImg);    
-    document.getElementById('artimg').addEventListener('mouseover', on);
-    document.getElementById('fullImg').addEventListener('mouseleave', off);
-    document.getElementById('imgOverlay').addEventListener('click', off);
-}
+    name.innerHTML = artwork.artist_title;}
 
 
 main()
