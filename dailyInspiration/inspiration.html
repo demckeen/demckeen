@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/artic.css">
     <link rel="stylesheet" href="css/poem.css">
     <link rel="stylesheet" href="css/colormind.css">
+    <link rel="stylesheet" href="css/larger.css">
 </head>
 
 <body>
@@ -20,7 +21,9 @@
         <div id="pageWrapper">
             <div class="headerBar">
                 <h1>daily dose of inspiration</h1>
-                <div id="listDropTitle">idea list<span class="material-icons expand_more">expand_more</span></div>
+                <div id="listDropTitle">idea list<svg xmlns="http://www.w3.org/2000/svg" fill="none" id="listDropArrow" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg></div>
             </div>
             <div id="notesArea">
                 <div id="listContent">
@@ -51,17 +54,23 @@
             </div>
             <div class="contentWrap">
                 <div class="contentBox">
-                    <div id="apiArea"></div>
+                    <div id="apiArea">
+                        <div id="imgColorBox">
+                            <a id="imageLink" href=""><img id="colorImg" src="" style="max-width: 100%"></a>
+                            <div id="imgSwatchBox">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
     <script src="js/todo/main.js" type="module"></script>
-    <script src="https://zircadia.github.io/danamckeen/dailyInspiration/js/fonts.js"></script>
-    <script src="https://zircadia.github.io/danamckeen/dailyInspiration/js/artic.js" type="module"></script>
-    <script src="https://zircadia.github.io/danamckeen/dailyInspiration/js/poem.js" type="module"></script>
-    <script src="https://zircadia.github.io/danamckeen/dailyInspiration/js/colormind.js" type="module"></script>
+    <script src="js/fonts.js"></script>
+    <script src="js/artic.js" type="module"></script>
+    <script src="js/poem.js" type="module"></script>
+    <script src="js/colorfromimage.js" type="module"></script>
 </body>
 
 </html>

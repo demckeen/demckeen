@@ -1,10 +1,10 @@
-.poemCard, #poemCard {
+.poemCard,
+#poemCard {
     border: none;
     border-radius: 8px;
     box-shadow: 1px 2px 6px grey;
-    margin: auto;
-    width: 282.5px;
-    height: 330px;
+    max-width: 100%;
+    max-height: 100%;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr 32px;
@@ -14,7 +14,7 @@
 
 .poemCard img {
     object-fit: cover;
-    width:100%;
+    width: 100%;
     height: 100%;
 }
 
@@ -49,12 +49,14 @@
     overflow: hidden;
 }
 
-.poemCard text { padding: 1rem;
+.poemCard text {
+    padding: 1rem;
     background-color: white;
     height: auto;
     overflow: auto;
     border-left: .5px solid gray;
-    border-right: .5px solid gray;}
+    border-right: .5px solid gray;
+}
 
 .poetryLinks {
     border: none;
@@ -68,14 +70,18 @@
     background-color: rgb(200, 213, 255);
 }
 
-.poemList {margin: 1rem auto;
-    display:grid;
+.poemList {
+    margin: 1rem auto;
+    display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-rows: repeat(4, 500px);
     gap: 1rem;
-    position: relative;}
+    position: relative;
+}
 
-.poemTitle {font-weight: bold;}
+.poemTitle {
+    font-weight: bold;
+}
 
 #pagination {
     display: flex;
@@ -84,4 +90,8 @@
 
 .poemCard text {
     white-space: pre-line;
+}
+
+.cardimg {
+    padding: .5rem;
 }
