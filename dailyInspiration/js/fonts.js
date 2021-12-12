@@ -58,11 +58,11 @@ function updateFont(el, choosedFontDetails) {
     link.setAttribute('href', "https://fonts.google.com/specimen/"+ choosedFontDetails.family);
     link.setAttribute('title', "See more about " + choosedFontDetails.family + " here.")
     link.setAttribute('id', 'fontLink');
-    link.textContent = "See more about this font here";
+    link.textContent = "See more about this font";
     fileLink.setAttribute('href', choosedFontDetails.files.regular);
     fileLink.setAttribute('title', "Direct download link for " + choosedFontDetails.family + " here.")
     fileLink.setAttribute('id', 'downloadLink');
-    fileLink.textContent = "Click to download the regular weight of this font";
+    fileLink.textContent = "Download this font";
     main.appendChild(el);
     el.appendChild(glyph);
     el.appendChild(title);
@@ -72,7 +72,7 @@ function updateFont(el, choosedFontDetails) {
     textArea.appendChild(actions);
     actions.appendChild(save);
     actions.appendChild(refresh);
-    save.innerHTML = '<i class="fas fa-download"></i>';
+    save.innerHTML = '<i class="far fa-lightbulb"></i>';
     refresh.innerHTML = '<i class="fas fa-sync"></i>';
     refresh.addEventListener('click', () => {
     reloadFont(el, choosedFontDetails);});

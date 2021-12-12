@@ -6,13 +6,14 @@
 
 #notesArea {
     font-family: 'Poppins', sans-serif;
-    color: #797979;
+    color: #012935;
 }
 
 .bottomBars {
     max-width: 300px;
     align-self: end;
-    background-color: #ebebeb;
+    background-color: #93b8c4;
+    color: #012935;
 }
 
 .listContainer {
@@ -30,8 +31,8 @@
 
 #notesArea h1 {
     text-align: center;
-    background-color: #d4d4d4;
-    color: #3a3a3a;
+    background-color: #93b8c4;
+    color: #012935;
     margin: 0;
     padding: .5rem;
     font-weight: 400;
@@ -46,7 +47,7 @@
     grid-template-columns: 50px 200px;
     width: calc(100% - 30px);
     padding: 5px 5px 5px 10px;
-    background-color: #ebebeb;
+    background-color: #ddf3fa;
     margin-right: 0;
 }
 
@@ -56,7 +57,7 @@
     align-items: center;
     text-align: left;
     grid-template-columns: repeat(3, auto);
-    color: #3a3a3a;
+    color: #012935;
     font-weight: 300;
     margin-left: 10px;
 }
@@ -68,8 +69,8 @@
     align-items: center;
     gap: 10px;
     padding: 10px .75rem;
-    background-color: #535353;
-    color: #ebebeb;
+    background-color: #012935;
+    color: whitesmoke;
 }
 
 .listItems {
@@ -103,7 +104,7 @@
 .taskRemain {
     font-weight: 300;
     flex-basis: 50%;
-    color: #3a3a3a;
+    color: #012935;
     align-self: center;
 }
 
@@ -122,7 +123,7 @@
 
 #notesArea button {
     background-color: #ebebeb;
-    color: #3a3a3a;
+    color: #012935;
     border: none;
     font-family: 'Poppins', sans-serif;
     justify-self: right;
@@ -251,12 +252,14 @@
 #listContent {
     display: none;
     position: absolute;
-    top: 80px;
+    top: 73px;
     left: 0;
-    height: calc(100% - 80px);
+    height: calc(100% - 73px);
     width: 100%;
     background-color: rgba(72, 72, 80, .5);
     transition: all .4s ease-in-out;
+    margin: 0;
+    padding: 0;
     z-index: 99;
     overflow: hidden;
 }
@@ -268,6 +271,7 @@
     max-width: 300px;
     right: 0;
     z-index: 100;
+    transition: all .3s ease-out;
 }
 
 @media only screen and (min-width: 34rem) {

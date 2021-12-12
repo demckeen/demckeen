@@ -8,6 +8,7 @@
     border-radius: 8px;
     display: grid;
     grid-template-rows: 345px 145px;
+    background-color: white;
 }
 
 #colorImg {width: 285px;

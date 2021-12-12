@@ -55,7 +55,7 @@ function buildArtworkCard(artwork) {
             <div class="cardheading" id="cardheading">
             <h2 class="artworkTitle" id="artworkTitle">${ artwork.title }</h2>
             <h3 class="artistName" id="artistName">${ artwork.artist_title }</h3>
-            <div id="actionButtons"><span title="Save Artwork to Ideas List" id="saveArtwork"><i class="fas fa-download"></i></span>
+            <div id="actionButtons"><span title="Save Artwork to Ideas List" id="saveArtwork"><i class="far fa-lightbulb"></i></span>
             <span id="artworkExpand" title="See Full Image"><i class="fas fa-expand-alt"></i></span>
             <span id="artworkRefresh" title="See New Artwork"><i class="fas fa-sync"></i></span></div></div>
         </section>

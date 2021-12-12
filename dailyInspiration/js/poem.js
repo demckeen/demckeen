@@ -50,7 +50,7 @@ function buildCard(item) {
             <text class="poem" id="poem">${ item.content }</text>
             <div class="poetryLinks" id="poetryLinks">
             <a id="poemLink" href="${ item.url }">Link to Poem</a> | <a id="poetLink" href="${item.poet.url}">Link to Poet</a>
-            <div id='poemActions'><span id='savePoem' title='Save Poem to Ideas List'><i class='fas fa-download'></i></span>
+            <div id='poemActions'><span id='savePoem' title='Save Poem to Ideas List'><i class="far fa-lightbulb"></i></span>
             <span id="poemRefresh" title="Get New Poem"><i class="fas fa-sync"></i></span></div>
     `
 }

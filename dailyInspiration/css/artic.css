@@ -1,25 +1,9 @@
-@media only screen and (max-width: 32.5em) {
-    .artworkCard {width: 90%;
-    margin-left: 0;
-    margin-right: 0;}
-}
-
 .noselect {
     user-select: none; /* supported by Chrome and Opera */
    -webkit-user-select: none; /* Safari */
    -khtml-user-select: none; /* Konqueror HTML */
    -moz-user-select: none; /* Firefox */
    -ms-user-select: none; /* Internet Explorer/Edge */
-}
-
-.btn {
-    padding: 5px 10px;
-    margin: 5px;
-    font-size: 1.25rem;
-    background-color: black;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
 }
 
 .artworkCard {
@@ -36,6 +20,7 @@
     grid-template-rows: 410px 85px;
     position: relative;
     overflow: hidden;
+    font-family: 'Lora', serif;
 }
 #actionButtons {position: absolute;
     height: 44px;
@@ -64,7 +49,6 @@
 
 .artworkTitle {
     overflow: hidden;
-    color: navy;
     padding-bottom: 5px;
     margin: 0;
     font-weight: 300;
@@ -72,7 +56,6 @@
 }
 
 .artistName {
-    color: navy;
     padding: 0rem;
     margin: 0;
     font-style: italic;
