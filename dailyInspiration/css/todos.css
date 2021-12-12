@@ -1,16 +1,22 @@
 *,
 *:before,
 *:after {
-  box-sizing: inherit;
+    box-sizing: inherit;
 }
 
-#notesArea {font-family: 'Poppins', sans-serif;
-    color: #797979;}
+#notesArea {
+    font-family: 'Poppins', sans-serif;
+    color: #797979;
+}
 
-.bottomBars {max-width: 320px;
-    align-self: end;}   
+.bottomBars {
+    max-width: 300px;
+    align-self: end;
+    background-color: #ebebeb;
+}
 
-.listContainer {border: none;
+.listContainer {
+    border: none;
     border-radius: 10px;
     box-shadow: 1px 2px 6px grey;
     overflow: hidden;
@@ -19,36 +25,44 @@
     margin-right: 10px;
     justify-self: right;
     display: grid;
-    grid-template-rows: 55px auto auto;}
+    grid-template-rows: 55px auto auto;
+}
 
-#notesArea h1 {text-align: center;
+#notesArea h1 {
+    text-align: center;
     background-color: #d4d4d4;
-    color:#3a3a3a;
+    color: #3a3a3a;
     margin: 0;
     padding: .5rem;
     font-weight: 400;
     font-size: 1.8rem;
-    line-height: 2.3rem;}
-
-.filters {display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 70px 230px;
-    max-width: 320px;
-    padding: 5px 5px 5px .75rem;
-    background-color: #ebebeb;}
-
-.categories {display: grid;
-    justify-items: center;
-    text-align: left;
-    grid-template-columns: repeat(3, auto);
-    color:#3a3a3a;
-    font-weight: 300;}
-
-.categories div {
-    margin: 0 10px 0 10px;
+    line-height: 2.3rem;
+    max-width: 300px;
 }
 
-.addTask {display: grid;
+.filters {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 50px 200px;
+    width: calc(100% - 30px);
+    padding: 5px 5px 5px 10px;
+    background-color: #ebebeb;
+    margin-right: 0;
+}
+
+.categories {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    text-align: left;
+    grid-template-columns: repeat(3, auto);
+    color: #3a3a3a;
+    font-weight: 300;
+    margin-left: 10px;
+}
+
+.addTask {
+    display: grid;
     grid-template-columns: 40px auto 40px;
     grid-template-rows: 1fr;
     align-items: center;
@@ -56,25 +70,58 @@
     padding: 10px .75rem;
     background-color: #535353;
     color: #ebebeb;
-    }
+}
 
-/* .listItems {height: 100%;} */
+.listItems {
+    height: 304px;
+    overflow-y: auto;
+    max-width: 300px;
+}
 
-#counter {font-weight: 600;}
+.listItems::-webkit-scrollbar {
+    width: 12px;
+    /* width of the entire scrollbar */
+}
 
-.taskRemain {font-weight: 300;
+.listItems::-webkit-scrollbar-track {
+    background: #e4e4e4;
+    /* color of the tracking area */
+}
+
+.listItems::-webkit-scrollbar-thumb {
+    background-color: #b6b6b6;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+    background-clip: padding-box;
+    border-radius: 8px;
+}
+
+#counter {
+    font-weight: 600;
+}
+
+.taskRemain {
+    font-weight: 300;
     flex-basis: 50%;
     color: #3a3a3a;
-    align-self: center;}
+    align-self: center;
+}
 
-.shown {background-color: white;
+.shown {
+    background-color: white;
     border-radius: 5px;
-    font-weight: 600;}
+    font-weight: 600;
+}
 
-#active, #all, #completed {padding: 0px 10px 0px 10px;
-    margin: 0;}
+#active,
+#all,
+#completed {
+    padding: 5px 10px 5px 10px;
+    margin: 0;
+}
 
-#notesArea button {background-color: #ebebeb;
+#notesArea button {
+    background-color: #ebebeb;
     color: #3a3a3a;
     border: none;
     font-family: 'Poppins', sans-serif;
@@ -85,20 +132,24 @@
     height: 26px;
     width: 26px;
     padding: 0;
-    cursor: pointer;}
+    cursor: pointer;
+}
 
-#notesArea input {height: 24px;
-    border:none;
+#notesArea input {
+    height: 24px;
+    border: none;
     min-width: 0;
     max-width: 320px;
     font-size: 1rem;
-    font-family: 'Poppins', sans-serif;}
+    font-family: 'Poppins', sans-serif;
+}
 
 #notesArea label {
-    margin-right: -5px;}
+    margin-right: -5px;
+}
 
 .checkbox::before {
-    font-family: "Font Awesome 5 Free"; 
+    font-family: "Font Awesome 5 Free";
     content: "\f0c8";
     color: #4f5d75;
     display: inline-block;
@@ -111,13 +162,16 @@
     transition: all .1s;
 }
 
-.task span::before, .task span::after {margin-top: 0;
+.task span::before,
+.task span::after {
+    margin-top: 0;
     width: 44px;
-    cursor: pointer;}
+    cursor: pointer;
+}
 
 .delete:hover:before {
     font-size: 1.3rem;
-    color:#3a3a3a;
+    color: #3a3a3a;
     transition: all .5s;
 }
 
@@ -131,7 +185,7 @@
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     content: "\f14a";
-    color:#3a3a3a;
+    color: #3a3a3a;
     display: inline-block;
     text-align: center;
     font-style: normal;
@@ -142,8 +196,8 @@
 }
 
 .delete::before {
-    font-family: "Font Awesome 5 Free"; 
-    font-weight: 900; 
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
     content: "\f00d";
     color: #535353;
     display: inline-block;
@@ -155,34 +209,47 @@
     transition: all .1s;
 }
 
-#notesArea ul {list-style-type: none;
+#notesArea ul {
+    list-style-type: none;
     padding: 0px 0px 5px 0px;
-    margin: 0;}
+    margin: 0;
+}
 
-#notesArea li.completeli {text-decoration: line-through;
-    background-color:#ebebeb;
+#notesArea li.completeli {
+    text-decoration: line-through;
+    background-color: #ebebeb;
     color: #3a3a3a;
-    transition: all .5s; }
-
-#notesArea li {transition: all .2s;
-    border-bottom: 2px solid #ebebeb;}
-
-.completeli > .delete::before {
-    color:#3a3a3a;
     transition: all .5s;
 }
 
-.task {display: flex;
+#notesArea li {
+    transition: all .2s;
+    border-bottom: 2px solid #ebebeb;
+}
+
+.completeli>.delete::before {
+    color: #3a3a3a;
+    transition: all .5s;
+}
+
+.task {
+    display: flex;
     align-items: center;
     min-height: 44px;
-    padding: 5px 15px 5px 15px;}
+    padding: 5px 5px 5px 5px;
+}
 
-#notesArea span.description {flex-grow: 1;
-    margin-left: 10px;}
+#notesArea span.description {
+    flex-grow: 1;
+    margin-left: 10px;
+}
 
-.checkbox {order: -1;}
+.checkbox {
+    order: -1;
+}
 
-#listContent {display: none;
+#listContent {
+    display: none;
     position: absolute;
     top: 80px;
     left: 0;
@@ -191,26 +258,52 @@
     background-color: rgba(72, 72, 80, .5);
     transition: all .4s ease-in-out;
     z-index: 99;
-    overflow: hidden;}
+    overflow: hidden;
+}
 
-.listContainer {background-color: white;
+.listContainer {
+    background-color: white;
     position: absolute;
     height: calc(100% - 80px);
+    max-width: 300px;
     right: 0;
-    z-index: 100;}
+    z-index: 100;
+}
 
 @media only screen and (min-width: 34rem) {
 
-    .listContainer {
-        max-width: 320px;
+    .listContainer,
+    #notesArea h1,
+    .listItems {
+        max-width: 800px;
     }
 
-    .task {padding: 5px .75rem 5px .75rem;}
+    .task {
+        padding: 5px .75rem 5px .75rem;
+    }
 
-    .categories {flex-direction: row;
+    .categories {
+        flex-direction: row;
         align-items: center;
-        justify-content: flex-end; }
+        justify-content: flex-end;
+    }
 
-    #active, #all, #completed {padding: 5px 10px 5px 10px;
-        margin: 0;}
+    #active,
+    #all,
+    #completed {
+        padding: 5px 10px 5px 10px;
+        margin: 0;
+    }
+
+    .bottomBars {
+        max-width: 800px;
+    }
+
+    .filters {
+        grid-template-columns: 70px 230px;
+        width: calc(100% - 15px);
+        padding: 5px 5px 5px 10px;
+        margin-right: 10px;
+        justify-content: space-between;
+    }
 }

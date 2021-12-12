@@ -1,3 +1,8 @@
+import ToDos from "./todo/todo.js";
+import { addArtwork } from "./todo/main.js";
+
+const toDos = new ToDos;
+
 let artdata = [];
 
 async function loadartdata() {
@@ -33,7 +38,8 @@ function displayArtwork(html) {
     artCard.setAttribute('id', 'artCard');
     apiArea.appendChild(artCard);
     artCard.innerHTML = html
-    document.getElementById('artCard').addEventListener('click', refreshArtworkCard);
+    document.getElementById('artworkRefresh').addEventListener('click', refreshArtworkCard);
+    document.getElementById('saveArtwork').addEventListener('click', addArtwork);
 }
 
 function buildArtworkCard(artwork) {
@@ -48,7 +54,10 @@ function buildArtworkCard(artwork) {
             <img class="artimg" id="artimg" src="https://www.artic.edu/iiif/2/${ artwork.image_id }/full/843,/0/default.jpg"></div>
             <div class="cardheading" id="cardheading">
             <h2 class="artworkTitle" id="artworkTitle">${ artwork.title }</h2>
-            <h3 class="artistName" id="artistName">${ artwork.artist_title }</h3></div>
+            <h3 class="artistName" id="artistName">${ artwork.artist_title }</h3>
+            <div id="actionButtons"><span title="Save Artwork to Ideas List" id="saveArtwork"><i class="fas fa-download"></i></span>
+            <span id="artworkExpand" title="See Full Image"><i class="fas fa-expand-alt"></i></span>
+            <span id="artworkRefresh" title="See New Artwork"><i class="fas fa-sync"></i></span></div></div>
         </section>
         </div>
     `
@@ -87,8 +96,7 @@ function buildOverlay(artwork) {
     fullImg.setAttribute('src', `https://www.artic.edu/iiif/2/${ artwork.image_id }/full/843,/0/default.jpg`);
     apiArea.appendChild(imgOverlay);
     imgOverlay.appendChild(fullImg);    
-    document.getElementById('artimg').addEventListener('mouseover', on);
-    document.getElementById('fullImg').addEventListener('mouseleave', off);
+    document.getElementById('artworkExpand').addEventListener('click', on);
     document.getElementById('imgOverlay').addEventListener('click', off);
 }
 

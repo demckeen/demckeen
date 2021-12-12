@@ -1,0 +1,64 @@
+#imgColorBox {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    box-shadow: 1px 2px 6px grey;
+    border: none;
+    border-radius: 8px;
+    display: grid;
+    grid-template-rows: 345px 145px;
+}
+
+#colorImg {width: 285px;
+    height: 336.5px;
+    border-radius: 8px 8px 0 0 ;
+    object-fit: cover;}
+    
+#paletteImgContainer {max-height: 100%; 
+    padding: .5rem;
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;}
+
+#imgSwatchBox .list {margin: .5rem;
+    margin-top: 0; 
+    height: 100%;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: stretch;
+    position: relative;}
+
+.imgSwatch {display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;}
+
+#colorActionButtons {
+    height: 44px;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+
+#colorImageExpand i, #savePalette i, #paletteRefresh i {margin-top: 22px;
+    margin-right: 5px;}
+
+#colorImgOverlay {display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(72, 72, 80, .5);
+    transition: all .4s ease-in-out;
+    z-index: 100;}
+
+#colorImgOverlay img {max-height: 90vh;
+    display: block;
+    margin: 2rem auto;}
+
+

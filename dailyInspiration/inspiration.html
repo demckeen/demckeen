@@ -8,12 +8,12 @@
     <meta name="description" content="Visit this page daily to see art inspiration pulled from many sources.">
     <title>Daily Art Inspiration</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/larger.css">
     <link rel="stylesheet" href="css/todos.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/artic.css">
     <link rel="stylesheet" href="css/poem.css">
-    <link rel="stylesheet" href="css/colormind.css">
-    <link rel="stylesheet" href="css/larger.css">
+    <link rel="stylesheet" href="css/colorfromimage.css">
 </head>
 
 <body>
@@ -56,8 +56,11 @@
                 <div class="contentBox">
                     <div id="apiArea">
                         <div id="imgColorBox">
-                            <a id="imageLink" href=""><img id="colorImg" src="" style="max-width: 100%"></a>
+                            <div id="paletteImgContainer">
+                            <a id="imageLink" href="" target="_blank"><img id="colorImg" src="" style="max-width: 100%"></a>
+                            </div>
                             <div id="imgSwatchBox">
+                            <span class="refresh" id="imgColorRefresh"></span>
                             </div>
                         </div>
                     </div>
@@ -66,8 +69,8 @@
         </div>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-    <script src="js/todo/main.js" type="module"></script>
-    <script src="js/fonts.js"></script>
+    <script src="js/todo/main.js" type="module" defer></script>
+    <script src="js/fonts.js" type="module"></script>
     <script src="js/artic.js" type="module"></script>
     <script src="js/poem.js" type="module"></script>
     <script src="js/colorfromimage.js" type="module"></script>

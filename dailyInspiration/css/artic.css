@@ -37,11 +37,21 @@
     position: relative;
     overflow: hidden;
 }
+#actionButtons {position: absolute;
+    height: 44px;
+    right: 2px;
+    bottom: 0;}
+
+#artworkExpand i, #saveArtwork {margin-right: 5px;
+    margin-top: 19px;}
+
+#artworkRefresh i {margin-top: 19px;}
 
 .artworkCard img {
-    width: 325px;
+    width: 285px;
     height: 405px;
     object-fit: cover;
+    border-radius: 8px 8px 0 0;
 }
 
 .cardimg {
@@ -72,7 +82,8 @@
 
 .cardheading {
     height: 75px;
-    margin: .25rem .5rem .5rem .5rem;}
+    margin: .25rem .5rem .5rem .5rem;
+    position: relative;}
 
 .title {font-weight: bold;}
 

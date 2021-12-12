@@ -7,3 +7,5 @@
 .headerBar {
     grid-template-rows: 1fr;
     grid-template-columns: auto 225px;}}
+
+#listDropTitle {margin: 10px 1.5rem 0 0;}

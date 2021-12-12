@@ -1,3 +1,8 @@
+import ToDos from "./todo/todo.js";
+import { addPoem } from "./todo/main.js";
+
+const toDos = new ToDos;
+
 let poemData = [];
 
 async function loadPoemData() {
@@ -16,7 +21,9 @@ async function main() {
     poemCard.setAttribute('id', 'poemCard');
     poemCard.setAttribute('class', 'poemCard noselect');
     apiArea.appendChild(poemCard);
-    poemCard.innerHTML = "<span id='loadingbox'>Loading Poem...<span>"
+    poemCard.innerHTML = "<span id='loadingbox'>Loading Poem...<span>"+
+        "<span id='tryAgain' title='Try Again'><i class='fas fa-sync'></i></span></div>";
+    document.getElementById('tryAgain').addEventListener('click', refreshPoem);
     poemData = await loadPoemData();
     const poem = poemData[0];
     displayPoem(buildCard(poem));
@@ -24,7 +31,8 @@ async function main() {
 
 function displayPoem(html) {
     poemCard.innerHTML = html
-    document.getElementById('poemCard').addEventListener('click', refreshPoem);
+    document.getElementById('savePoem').addEventListener('click', addPoem);
+    document.getElementById('poemRefresh').addEventListener('click', refreshPoem);
 }
 
 function buildCard(item) {
@@ -41,7 +49,9 @@ function buildCard(item) {
             <h3 class="poetName" id="poetName">${ item.poet.name }</h3></div>
             <text class="poem" id="poem">${ item.content }</text>
             <div class="poetryLinks" id="poetryLinks">
-            <a id="poemLink" href="${ item.url }">Link to Poem</a> | <a id="poetLink" href="${item.poet.url}">Link to Poet</a></div>
+            <a id="poemLink" href="${ item.url }">Link to Poem</a> | <a id="poetLink" href="${item.poet.url}">Link to Poet</a>
+            <div id='poemActions'><span id='savePoem' title='Save Poem to Ideas List'><i class='fas fa-download'></i></span>
+            <span id="poemRefresh" title="Get New Poem"><i class="fas fa-sync"></i></span></div>
     `
 }
 

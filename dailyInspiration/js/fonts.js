@@ -1,3 +1,8 @@
+import ToDos from "./todo/todo.js";
+import { addFont } from "./todo/main.js";
+
+const toDos = new ToDos;
+
 let apiKey = "AIzaSyDZvgXbMtOb7loGYaPUVWoun2CD4fL0oL0";
 let fontsList = [];
 let el;
@@ -36,6 +41,16 @@ function updateFont(el, choosedFontDetails) {
     let title = document.createElement('span');
     let link = document.createElement('a');
     let fileLink = document.createElement('a');
+    let textArea = document.createElement('div');
+    let refresh = document.createElement('span');
+    let save = document.createElement('span');
+    let actions = document.createElement('div');
+    actions.setAttribute('id', 'fontActions');
+    save.setAttribute('id', 'saveFont');
+    refresh.setAttribute('id', 'fontRefresh');
+    refresh.setAttribute('title', 'See a New Font');
+    textArea.setAttribute('id', 'fontLinksBox');
+    save.setAttribute('title', 'Save Font Name to Ideas List');
     glyph.setAttribute('id', 'glyph');
     glyph.textContent = 'g';
     title.textContent = choosedFontDetails.family;
@@ -51,11 +66,17 @@ function updateFont(el, choosedFontDetails) {
     main.appendChild(el);
     el.appendChild(glyph);
     el.appendChild(title);
-    el.appendChild(link);
-    el.appendChild(fileLink);
-    el.addEventListener('click', () => {
-    reloadFont(el, choosedFontDetails);
-});
+    el.appendChild(textArea);
+    textArea.appendChild(link);
+    textArea.appendChild(fileLink);
+    textArea.appendChild(actions);
+    actions.appendChild(save);
+    actions.appendChild(refresh);
+    save.innerHTML = '<i class="fas fa-download"></i>';
+    refresh.innerHTML = '<i class="fas fa-sync"></i>';
+    refresh.addEventListener('click', () => {
+    reloadFont(el, choosedFontDetails);});
+    save.addEventListener('click', addFont);
 
 }
 async function main() {

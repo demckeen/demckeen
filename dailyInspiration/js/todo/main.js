@@ -1,6 +1,7 @@
 
 import ToDos from "./todo.js";
 import { getTodos } from "./utilities.js";
+export { addColors, addFont, addPoem, addArtwork };
 
 const toDos = new ToDos;
 
@@ -30,6 +31,27 @@ function addTask() {
     toDos.addTodo();
     toDos.listTodos();
 }
+
+function addColors() {
+    toDos.addColorPalette();
+    toDos.listTodos();
+}
+
+function addFont() {
+  toDos.addFontName();
+  toDos.listTodos();
+}
+
+function addPoem() {
+  toDos.addPoemInfo();
+  toDos.listTodos();
+}
+
+function addArtwork() {
+  toDos.addArtworkInfo();
+  toDos.listTodos();
+}
+
 
 window.onload = function () {prepareEventHandlers();}
 

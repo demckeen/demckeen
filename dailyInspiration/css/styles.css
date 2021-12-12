@@ -13,7 +13,7 @@
     
 #listDropTitle {
     font-size: 1.3rem;
-    margin: 10px 0;
+    margin: 10px 0 0 0;
     text-align: center;
     background-color: #d4d4d4;
     color:#3a3a3a;
@@ -55,8 +55,10 @@
     width: 100%;
     display: grid;
     gap: .5rem;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 340px));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 300px));
     grid-template-rows: repeat(auto-fit, 500px);
+    justify-content: center;
+    justify-items: space-evenly;
     grid-auto-flow: row;
 }
 
@@ -79,3 +81,9 @@
     width: 22px;
     margin-left: 5px;
 }
+
+i {color: #3a3a3a;
+    transition: all .3s ease-out;}
+
+i:hover {transform: scale(1.2);
+    color: black;}
