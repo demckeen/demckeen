@@ -1,4 +1,7 @@
-let palette;
+import ToDos from "./todo/todo.js";
+import { addColors } from "./todo/main.js";
+
+const toDos = new ToDos;
 
 let clientId = '1Z8wPPFry6vTJu5trwq8GPlML83yLCZQTuwFRBMURTE'
 let imageUrl;
@@ -53,7 +56,7 @@ async function setImage() {
       imageUrl = imageData.links.html;
       imageSrc = imageData.urls.regular;
       document.getElementById('colorImg').setAttribute('src', imageSrc);
-      document.getElementById('imageLink').setAttribute('src', imageUrl);
+      document.getElementById('imageLink').setAttribute('href', imageUrl);
       loadImgColorPalette(imageSrc);
     });
 }
@@ -87,16 +90,54 @@ async function loadImgColorPalette(imageSrc) {
 
 
 displayPalette(buildSwatches(palette));
+buildImgOverlay(imageSrc);
+document.getElementById('paletteRefresh').addEventListener('click', refreshColorPalette);
+document.getElementById('savePalette').addEventListener('click', addColors);
+}
 
+async function refreshColorPalette() {
+var url = `https://api.unsplash.com/photos/random?query=content_filter=low&count=1&client_id=${clientId}`;
+  await fetch(url)
+    .then(function (response) {
+      return response.json();
+    }).then(function (data) {
+      console.log(data)
+      imageData = data[0];
+      imageUrl = imageData.links.html;
+      imageSrc = imageData.urls.regular;
+      document.getElementById('colorImg').setAttribute('src', imageSrc);
+      document.getElementById('imageLink').setAttribute('href', imageUrl);
+      document.getElementById('colorFullImg').setAttribute('src', imageSrc);
+      updateColorPalette(imageSrc);
+    });
+}
+
+async function updateColorPalette(imageSrc) {
+
+  let palette = await fetchColorData(imageSrc)
+  console.log(palette);
+  palette = palette.result.colors.image_colors;
+  console.log(palette);
+
+  console.log(palette[0].html_code);
+
+
+displayPalette(buildSwatches(palette));
+document.getElementById('savePalette').addEventListener('click', addColors);
+document.getElementById('colorImageExpand').addEventListener('click', on);
+document.getElementById('colorImgOverlay').addEventListener('click', off);
 }
 
 
 function buildSwatches(palette) {
   return `
-      <div class="list">
+      <div class="list" id="swatchList">
           ${palette.reduce((acc, color) => {
               return acc + buildSwatch(color)
           }, "")}
+          <div id="colorActionButtons"><span title="Save codes to Ideas List" id="savePalette"><i class="fas fa-download"></i></span>
+          <span id="colorImageExpand" title="Expand Image"><i class="fas fa-expand-alt"></i></span>
+          <span id="paletteRefresh" title="New Image and Palette"><i class="fas fa-sync"></i></span></div>
       </div>
   `
 }
@@ -117,40 +158,23 @@ function displayPalette(content) {
   document.getElementById('imgSwatchBox').innerHTML = content;
 }
 
-// document.getElementById('tryAgain').addEventListener('click', refreshColorPalette);
+function on() {
+  document.getElementById("colorImgOverlay").style.display = "block";
+}
 
-async function refreshColorPalette() {
-  scheme = document.getElementById('scheme').value;
-  randomColor = document.getElementById('colorname').innerHTML.slice(1);
-  var url = `https://www.thecolorapi.com/scheme?hex=${randomColor}&format=json&mode=${scheme}&count=6`;
-  console.log(url);
-  await fetch(url)
-    .then(function (response) {
-      return response.json();
-    }).then(function (data) {
-      palette = data.colors;
-      console.log(palette); // this will be a string
-    });
+function off() {
+  document.getElementById("colorImgOverlay").style.display = "none";
+}
 
-  let swatch1 = document.getElementById('swatch1');
-  let swatch2 = document.getElementById('swatch2');
-  let swatch3 = document.getElementById('swatch3');
-  let swatch4 = document.getElementById('swatch4');
-  let swatch5 = document.getElementById('swatch5');
-  let swatch6 = document.getElementById('swatch6');
-
-  swatch1.style.backgroundColor = palette[0].hex.value;
-  swatch2.style.backgroundColor = palette[1].hex.value;
-  swatch3.style.backgroundColor = palette[2].hex.value;
-  swatch4.style.backgroundColor = palette[3].hex.value;
-  swatch5.style.backgroundColor = palette[4].hex.value;
-  swatch6.style.backgroundColor = palette[5].hex.value;
-
-  swatch1.innerHTML = palette[0].hex.value;
-  swatch2.innerHTML = palette[1].hex.value;
-  swatch3.innerHTML = palette[2].hex.value;
-  swatch4.innerHTML = palette[3].hex.value;
-  swatch5.innerHTML = palette[4].hex.value;
-  swatch6.innerHTML = palette[5].hex.value;
-
+function buildImgOverlay(imageSrc) {
+  let imgOverlay = document.createElement('div');
+  let fullImg = document.createElement('img');
+  imgOverlay.setAttribute('id','colorImgOverlay');
+  fullImg.setAttribute('id', 'colorFullImg');
+  fullImg.setAttribute('src', imageSrc);
+  apiArea.appendChild(imgOverlay);
+  imgOverlay.appendChild(fullImg);    
+  document.getElementById('colorImageExpand').addEventListener('click', on);
+  document.getElementById('colorImgOverlay').addEventListener('click', off);
+  document.getElementById('savePalette').addEventListener('click', savePalette);
 }
