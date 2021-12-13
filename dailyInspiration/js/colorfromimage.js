@@ -91,6 +91,11 @@ async function loadImgColorPalette(imageSrc) {
 
 displayPalette(buildSwatches(palette));
 buildImgOverlay(imageSrc);
+let iconColor = palette.at(-1);
+iconColor = setContrastText(iconColor);
+document.getElementById('paletteRefreshIcon').style.color = iconColor;
+document.getElementById('paletteIdea').style.color = iconColor;
+document.getElementById('paletteExpand').style.color = iconColor;
 document.getElementById('paletteRefresh').addEventListener('click', refreshColorPalette);
 document.getElementById('savePalette').addEventListener('click', addColors);
 }
@@ -123,6 +128,11 @@ async function updateColorPalette(imageSrc) {
 
 
 displayPalette(buildSwatches(palette));
+let iconColor = palette.at(-1);
+iconColor = setContrastText(iconColor);
+document.getElementById('paletteRefreshIcon').style.color = iconColor;
+document.getElementById('paletteIdea').style.color = iconColor;
+document.getElementById('paletteExpand').style.color = iconColor;
 document.getElementById('paletteRefresh').addEventListener('click', refreshColorPalette);
 document.getElementById('savePalette').addEventListener('click', addColors);
 document.getElementById('colorImageExpand').addEventListener('click', on);
@@ -136,9 +146,9 @@ function buildSwatches(palette) {
           ${palette.reduce((acc, color) => {
               return acc + buildSwatch(color)
           }, "")}
-          <div id="colorActionButtons"><span title="Save Palette Codes to Ideas List" id="savePalette"><i class="far fa-lightbulb"></i></span>
-          <span id="colorImageExpand" title="Expand Image"><i class="fas fa-expand-alt"></i></span>
-          <span id="paletteRefresh" title="New Image and Palette"><i class="fas fa-sync"></i></span></div>
+          <div id="colorActionButtons"><span title="Save Palette Codes to Ideas List" id="savePalette"><i id="paletteIdea" class="far fa-lightbulb"></i></span>
+          <span id="colorImageExpand" title="Expand Image"><i id="paletteExpand" class="fas fa-expand-alt"></i></span>
+          <span id="paletteRefresh" title="New Image and Palette"><i id="paletteRefreshIcon" class="fas fa-sync"></i></span></div>
       </div>
   `
 }

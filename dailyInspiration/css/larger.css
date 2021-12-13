@@ -1,11 +1,11 @@
-@media only screen and (min-width: 32.5em) {
+@media only screen and (min-width: 40em) {
 .headerBar h1 {
     font-family: 'Poppins', sans-serif;
     margin: .5rem 2rem;
+    line-height: 3.5rem;
 }
 
 .headerBar {
     grid-template-rows: 1fr;
     grid-template-columns: auto 225px;}}
 
-#listDropTitle {margin: 10px 1.5rem 0 0;}

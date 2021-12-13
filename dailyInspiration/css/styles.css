@@ -2,15 +2,24 @@
 @import url("https://use.fontawesome.com/releases/v5.13.0/css/all.css");
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
 
+@media only screen and (max-width: 370px) {
+    #listDropTitle span {display: none;}
+    #ideaListIcon {margin-right: 8px;
+        padding-left: 8px;}
+    #listDropTitle {width: 80px !important;}
+}
+
 .headerBar h1 {
     font-family: 'Poppins', sans-serif;
     margin: .5rem .5rem;
     padding-top: .15rem;
+    font-size: calc(24px + 6 * ((100vw - 320px) / 680));
+    line-height: 2rem;
 }
 
 .headerBar {
     background-color: white;
-    height: 73px;
+    height: auto;
 }
 
 body {
@@ -25,11 +34,12 @@ body a:hover {
 
 .headerBar {display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: auto 130px;}
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    column-gap: 10px;}
     
 #listDropTitle {
     font-size: 1.3rem;
-    margin: 10px 0 0 0;
     font-family: 'Poppins', sans-serif;
     text-align: center;
     background-color: #003342;
@@ -42,8 +52,11 @@ body a:hover {
     cursor: pointer;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-self: center;   
+    margin-right: 0;
+    justify-content: space-evenly;
     transition: all .3s ease-out;
+    width: 130px;
 }
 
 .gridded {
@@ -89,10 +102,13 @@ body a:hover {
     color: rgb(155, 153, 153);
 }
 
+#listDropTitle span {line-height: 1.1rem;
+    font-size: 1rem;}
+
 #listDropArrow {
     height: 19px;
     width: 22px;
-    margin-left: 5px;
+    margin-right: 3px;
 }
 
 i {color: #3a3a3a;
@@ -104,7 +120,7 @@ i:hover {transform: scale(1.2);
 #ideaListIcon {
     color: white;
     font-size: 1rem;
-    margin-right: 10px;
+    margin-left: 3px;
 }
 
 #ideaListIcon:hover {
