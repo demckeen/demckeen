@@ -14,6 +14,15 @@
     background-color: white;
 }
 
+.poemBox {
+    padding: 1rem;
+    background-color: white;
+    margin: 10px;
+    border-radius: 8px;
+    max-height: 450px;
+    overflow: auto;
+}
+
 .poemCard img {
     object-fit: cover;
     width: 100%;
@@ -53,8 +62,6 @@
 }
 
 .poemCard text {
-    padding: 1rem;
-    background-color: white;
     height: auto;
     overflow: auto;
     border-left: .5px solid gray;

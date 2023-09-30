@@ -7,7 +7,7 @@ let poemData = [];
 
 async function loadPoemData() {
     try {
-        const result = await fetch('https://www.poemist.com/api/v1/randompoems');
+        const result = await fetch('https://poetrydb.org/random');
         const data = await result.json();
         console.log(data);
         return data;
@@ -37,8 +37,8 @@ function displayPoem(html) {
 
 function buildCard(item) {
     //insert API specific details you wish to display on the card element
-    if (!item.poet.name) {
-        item.poet.name = "Unknown";
+    if (!item.author) {
+        item.author = "Unknown";
     }
 
     console.log(item.url);
@@ -46,14 +46,16 @@ function buildCard(item) {
     return `
             <div class="poemCardheading">
             <h2 class="poemTitle" id="poemTitle">${ item.title }</h2>
-            <h3 class="poetName" id="poetName">${ item.poet.name }</h3></div>
-            <text class="poem" id="poem">${ item.content }</text>
-            <div class="poetryLinks" id="poetryLinks">
-            <a id="poemLink" href="${ item.url }">Link to Poem</a> | <a id="poetLink" href="${item.poet.url}">Link to Poet</a>
+            <p class="poetName" id="poetName">${ item.author }</p>
+            <div class="poemBox">
+                <text class="poem" id="poem">${ item.lines.join('\n') }</text>
+            </div>
             <div id='poemActions'><span id='savePoem' title='Save Poem to Ideas List'><i class="far fa-lightbulb"></i></span>
             <span id="poemRefresh" title="Get New Poem"><i class="fas fa-sync"></i></span></div>
     `
 }
+
+{/* <a id="poemLink" href="${ item.url }">Link to Poem</a> | <a id="poetLink" href="${item.poet.url}">Link to Poet</a> */}
 
 async function refreshPoem(poem) {
     let title = document.getElementById('poemTitle');
@@ -65,17 +67,17 @@ async function refreshPoem(poem) {
     
     poemData = await loadPoemData();
     poem = poemData[0];
-    if (!poem.poet.name) {poem.poet.name = "Unknown";}
+    if (!poem.author) {poem.author = "Unknown";}
     
     console.log(poem);
 
     title = document.getElementById('poemTitle');
     name = document.getElementById('poetName');
     content = document.getElementById('poem');
-    poetLink.setAttribute('href', poem.url);
-    poetLink.setAttribute('href', poem.poet.url);
+    // poetLink.setAttribute('href', poem.url);
+    // poetLink.setAttribute('href', poem.poet.url);
     title.innerHTML = poem.title;
-    name.innerHTML = poem.poet.name;
-    content.innerHTML = poem.content;}
+    name.innerHTML = poem.author;
+    content.innerHTML = poem.lines;}
 
 main()
